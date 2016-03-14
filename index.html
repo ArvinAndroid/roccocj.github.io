@@ -130,10 +130,10 @@
 
       <div class="body-wrap">
   
-    <article id="post-Git操作基础" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Git基础操作" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/14/Git操作基础/" class="article-date">
+      <a href="/2016/03/14/Git基础操作/" class="article-date">
   	<time datetime="2016-03-14T15:50:20.000Z" itemprop="datePublished">2016-03-14</time>
 </a>
     </div>
@@ -147,7 +147,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/14/Git操作基础/">Git操作基础</a>
+      <a class="article-title" href="/2016/03/14/Git基础操作/">Git操作基础</a>
     </h1>
   
 
@@ -156,9 +156,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>基础操作：</strong></p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git diff file		<span class="string">[查看工作区内的修改文件]</span></span><br><span class="line">git add file		<span class="string">[添加文件至缓存区]</span></span><br><span class="line">git commit -m <span class="string">""</span>		<span class="string">[把缓存区的文件提到到本地仓库, 引号内填写备注信息，能够让别人大概清楚你这次提交做了什么]</span></span><br></pre></td></tr></table></figure>
-
+        <p><strong>文件修改操作：</strong></p>
+<p>[查看工作区内已修改文件的细节]</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff <span class="type">file</span></span><br></pre></td></tr></table></figure>
+<p>[添加文件至暂存区]</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">add</span> <span class="built_in">file</span></span><br></pre></td></tr></table></figure>
+<p>[把暂存区的文件提到到本地仓库, 引号内填写备注信息，目的是让别人大概清楚你这次提交做了什么]</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">commit</span> -<span class="keyword">m</span> <span class="string">""</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>远程操作：</strong></p>
+<p>[在当前目录把指定url的项目down下来,name将项目down到这个name的文件夹下，可写可不写]</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">url</span> name</span><br></pre></td></tr></table></figure>
+<p>[把本地仓库的commit推送到远程版本库]</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">push</span></span><br></pre></td></tr></table></figure>
+<p>[把远程版本库的内容更新到本地]</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> pull</span><br></pre></td></tr></table></figure>
+<p><strong>撤销操作：</strong></p>
+<p>[撤销工作区中文件的修改]</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="comment">-- file</span></span><br></pre></td></tr></table></figure>
+<p>[把暂存区中的文件撤销回工作区]</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">reset</span> <span class="keyword">HEAD</span> <span class="keyword">file</span></span></span><br></pre></td></tr></table></figure>
+<p>[回退到上一个commit版本]</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></span></span><br></pre></td></tr></table></figure>
+<p>[回退到某一个commit版本,之前提交的版本号可以通过 git log 查看]</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard version</span></span></span><br></pre></td></tr></table></figure>
+<p>[重新编辑上一次commit的信息]</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> commit --amend -m <span class="string">""</span></span><br></pre></td></tr></table></figure>
+<p><strong>其它操作：</strong></p>
+<p>[ push失败，出现：<strong>failed to push some refs to</strong>这个提示的话，基本上是本地仓库与远程版本库内容不一致，这句命令表示主机与本地代码合并，origin为远程主机名，master为分支名 ]</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull —rebase origin <span class="literal">master</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
