@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Git操作基础 | 生命不息，折腾不止</title>
+  <title>Git基础操作 | 生命不息，折腾不止</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="文件修改操作：
 [查看工作区内已修改文件的细节]
@@ -17,7 +17,7 @@
 [在当前目录把指定url的项目down下来,name将项目down到这个name的文件夹下，可写可不写]
 1git clone">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git操作基础">
+<meta property="og:title" content="Git基础操作">
 <meta property="og:url" content="http://yoursite.com/2016/03/14/Git基础操作/index.html">
 <meta property="og:site_name" content="生命不息，折腾不止">
 <meta property="og:description" content="文件修改操作：
@@ -30,9 +30,9 @@
 远程操作：
 [在当前目录把指定url的项目down下来,name将项目down到这个name的文件夹下，可写可不写]
 1git clone">
-<meta property="og:updated_time" content="2016-03-14T16:44:27.000Z">
+<meta property="og:updated_time" content="2016-03-15T05:06:00.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git操作基础">
+<meta name="twitter:title" content="Git基础操作">
 <meta name="twitter:description" content="文件修改操作：
 [查看工作区内已修改文件的细节]
 1git diff file
@@ -173,7 +173,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Git操作基础
+      Git基础操作
     </h1>
   
 
@@ -199,6 +199,7 @@
 <p><strong>远程操作：</strong></p>
 <p>[在当前目录把指定url的项目down下来,name将项目down到这个name的文件夹下，可写可不写]</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">url</span> name</span><br></pre></td></tr></table></figure>
+ <a id="more"></a>
 <p>[把本地仓库的commit推送到远程版本库]</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">push</span></span><br></pre></td></tr></table></figure>
 <p>[把远程版本库的内容更新到本地]</p>
@@ -214,6 +215,8 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard version</span></span></span><br></pre></td></tr></table></figure>
 <p>[重新编辑上一次commit的信息]</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> commit --amend -m <span class="string">""</span></span><br></pre></td></tr></table></figure>
+<p>[把本地版本库最近一次的commit内容撤回到暂存区内]</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">reset</span> <span class="comment">--soft HEAD~1</span></span></span><br></pre></td></tr></table></figure>
 <p><strong>其它操作：</strong></p>
 <p>[ push失败，出现：<strong>failed to push some refs to</strong>这个提示的话，基本上是本地仓库与远程版本库内容不一致，这句命令表示主机与本地代码合并，origin为远程主机名，master为分支名 ]</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull —rebase origin <span class="literal">master</span></span><br></pre></td></tr></table></figure>
@@ -243,7 +246,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Git基础操作" data-title="Git操作基础" data-url="http://yoursite.com/2016/03/14/Git基础操作/"></div>
+	<div class="ds-thread" data-thread-key="Git基础操作" data-title="Git基础操作" data-url="http://yoursite.com/2016/03/14/Git基础操作/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

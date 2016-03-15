@@ -18,7 +18,7 @@
 
 系统广播
   由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些">
-<meta property="og:updated_time" content="2016-03-05T15:06:52.000Z">
+<meta property="og:updated_time" content="2016-03-15T04:56:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Androd Broadcast的一点小知识">
 <meta name="twitter:description" content="先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）
@@ -180,6 +180,9 @@
 <p>   光是系统广播的Action肯定是满足不了我们的要求的，所以我们可以通过自定义广播完成部分需求，比如我在一个Service里面完成了某件事情，现在我要通知一个界面做些处理，这个时候就可以用自定义广播，<strong>关键点就是IntentFilter的action设置,注意不要跟系统action的重名。</strong></p>
  <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">IntentFilter <span class="built_in">filter</span> = <span class="keyword">new</span> IntentFilter();</span><br><span class="line"><span class="built_in">filter</span>.addAction(<span class="string">"xx.xx.xxx"</span>);</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">&lt;intent-<span class="built_in">filter</span>&gt;</span><br><span class="line">   &lt;action android:name=<span class="string">"xx.xx.xxx"</span> /&gt;</span><br><span class="line">&lt;/intent-<span class="built_in">filter</span>&gt;</span><br></pre></td></tr></table></figure>
 </li>
+</ul>
+<a id="more"></a>
+<ul>
 <li><p><strong>无序广播</strong></p>
 <p> 顾名思义，大家应该就能知道的。不过说到底，接收还是有一个前后之分，两个app，到底哪个先接收到呢？这个我也不知道怎么说，不过我想，也许是按照app的安装顺序来吧(个人猜测)。</p>
 </li>
@@ -222,7 +225,7 @@
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          Git操作基础
+          Git基础操作
         
       </div>
     </a>

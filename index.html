@@ -147,7 +147,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/14/Git基础操作/">Git操作基础</a>
+      <a class="article-title" href="/2016/03/14/Git基础操作/">Git基础操作</a>
     </h1>
   
 
@@ -166,24 +166,6 @@
 <p><strong>远程操作：</strong></p>
 <p>[在当前目录把指定url的项目down下来,name将项目down到这个name的文件夹下，可写可不写]</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">url</span> name</span><br></pre></td></tr></table></figure>
-<p>[把本地仓库的commit推送到远程版本库]</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">push</span></span><br></pre></td></tr></table></figure>
-<p>[把远程版本库的内容更新到本地]</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> pull</span><br></pre></td></tr></table></figure>
-<p><strong>撤销操作：</strong></p>
-<p>[撤销工作区中文件的修改]</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="comment">-- file</span></span><br></pre></td></tr></table></figure>
-<p>[把暂存区中的文件撤销回工作区]</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">reset</span> <span class="keyword">HEAD</span> <span class="keyword">file</span></span></span><br></pre></td></tr></table></figure>
-<p>[回退到上一个commit版本]</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></span></span><br></pre></td></tr></table></figure>
-<p>[回退到某一个commit版本,之前提交的版本号可以通过 git log 查看]</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard version</span></span></span><br></pre></td></tr></table></figure>
-<p>[重新编辑上一次commit的信息]</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> commit --amend -m <span class="string">""</span></span><br></pre></td></tr></table></figure>
-<p><strong>其它操作：</strong></p>
-<p>[ push失败，出现：<strong>failed to push some refs to</strong>这个提示的话，基本上是本地仓库与远程版本库内容不一致，这句命令表示主机与本地代码合并，origin为远程主机名，master为分支名 ]</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull —rebase origin <span class="literal">master</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -192,6 +174,10 @@
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/14/Git基础操作/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -238,42 +224,13 @@
         <p><strong>先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）</strong></p>
 <ul>
 <li><p><strong>系统广播</strong></p>
-<p>  由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，只需要按照普通方式来注册receiver就OK。关于Android的一些广播动作API：<a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_TIME_TICK" target="_blank" rel="external">Standard Broadcast Actions</a></p>
+<p>  由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，只需要按照普通方式来注册receiver就OK。关于Android的一些广播动作API：<a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_TIME_TICK">Standard Broadcast Actions</a></p>
 </li>
 <li><p><strong>自定义广播</strong></p>
 <p>   光是系统广播的Action肯定是满足不了我们的要求的，所以我们可以通过自定义广播完成部分需求，比如我在一个Service里面完成了某件事情，现在我要通知一个界面做些处理，这个时候就可以用自定义广播，<strong>关键点就是IntentFilter的action设置,注意不要跟系统action的重名。</strong></p>
  <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">IntentFilter <span class="built_in">filter</span> = <span class="keyword">new</span> IntentFilter();</span><br><span class="line"><span class="built_in">filter</span>.addAction(<span class="string">"xx.xx.xxx"</span>);</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">&lt;intent-<span class="built_in">filter</span>&gt;</span><br><span class="line">   &lt;action android:name=<span class="string">"xx.xx.xxx"</span> /&gt;</span><br><span class="line">&lt;/intent-<span class="built_in">filter</span>&gt;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>无序广播</strong></p>
-<p> 顾名思义，大家应该就能知道的。不过说到底，接收还是有一个前后之分，两个app，到底哪个先接收到呢？这个我也不知道怎么说，不过我想，也许是按照app的安装顺序来吧(个人猜测)。</p>
-</li>
-<li><p><strong>有序广播（OrderedBroadcast）</strong></p>
-<p> 广播接收器收到后,可以调用<strong>abortBroadcast()</strong>方法终止这条广播的传递，表示我把这个信息截获了，不让后面的人知道。这里涉及到一个优先级，Android官方规定范围为<strong>-1000到1000</strong>之间。数值越大，则越先收到广播。设置：</p>
- <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">IntentFilter <span class="built_in">filter</span> = <span class="keyword">new</span> IntentFilter();</span><br><span class="line"><span class="built_in">filter</span>.setPriority(<span class="number">1000</span>);</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">&lt;intent-<span class="built_in">filter</span> android:priority=<span class="string">"1000"</span>&gt;</span><br><span class="line">   &lt;action android:name=<span class="string">"xx.xx.xxx"</span> /&gt;</span><br><span class="line">&lt;/intent-<span class="built_in">filter</span>&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>粘性广播(StickyBroadcast)</strong></p>
-<p> 跟前面几种广播不同，Intent会一直保留到广播事件结束，也就是被接收。比如我现在发一个StickyBroadcast，然后过5秒钟启动一个Activity，在这个Activity里面动态注册一个Receiver接收刚刚发出的StickyBroadcast，是可以接收到的。<br><strong>要注意一点的是，StickyBroadcast需要额外添加一个权限：</strong></p>
- <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:<span class="property">name</span>=<span class="string">"android.permission.BROADCAST_STICKY"</span>/&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>本地广播(LocalBroadcast)</strong></p>
-<p>  Android 5.0新增的一个广播类型，上面讲的广播类型都是全局的，系统内所有的app都能收到，但其实很多自己开发的app只需要在本身app内传递。<strong>那么就是这个了，LocalBroadcast！</strong><br>  特点：<strong>广播发送后，范围只在本身app内，其它app并不会收到这个广播通知，由于是本地广播，顾名思义，系统也不会去管你，不用到系统那里去走一遍，效率自然也会更高。</strong></p>
-  <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注册：</span></span><br><span class="line">LocalBroadcastManager.getInstance(context).registerReceiver(receiver,intentFilter);	</span><br><span class="line"><span class="comment">//发送</span></span><br><span class="line">LocalBroadcastManager.getInstance(context).sendBroadcast(intent)</span><br><span class="line"><span class="comment">//接收跟普通广播无异。</span></span><br></pre></td></tr></table></figure>
-</li>
 </ul>
-<p><strong>关于注册方式：</strong></p>
-<ul>
-<li><p><strong>冷注册和热注册</strong></p>
-<ul>
-<li><p><strong>冷注册:即使程序未运行,也会收到系统or其他应用发出的广播（注册方式在AndroidManifest.xml中注册）。</strong></p>
-</li>
-<li><p><strong>热注册:与冷注册相反，这个程序得在运行时才能收到发出的广播消息，否则是接收不到的（使用代码的方式注册）。</strong></p>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>结尾</strong></p>
-<p><strong>关于广播的注册、接收，网上已经有太多数不胜数的code了，有很多都写的很完整，我这里就不做太多的展示了，抱歉。我希望能帮到每一个看到这篇文章的朋友,谢谢！</strong></p>
-
       
     </div>
     
@@ -282,6 +239,10 @@
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/05/关于Androd-Broadcast的一点小知识/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
