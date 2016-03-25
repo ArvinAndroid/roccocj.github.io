@@ -57,25 +57,25 @@
 
 
 
-<meta name="description" content="开始学习Vim的操作，一边学习一边纪录。Vim编辑器是一个模式编辑器。在不同模式下的行为和操作都是截然不同的。两个基本的模式就是标准模式 ( Normal ) 和编辑模式 ( Insert )。在标准模式下，你输入的每一个字符都会被认为是一个命令。在编辑模式下表示输入的字符是真正的文本内容。
-打开文件
-1vim filename
-进入编辑模式(输入i时，底部会出现 -- INSERT --的提示)">
+<meta name="description" content="全名：Android Debug Bridge，Android下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。
+先通过简单的几个命令来熟悉一下吧！
+[查看当前连接PC的所有设备]
+12345adb devices//你会看到设备的序列号和状态e4b25377        deviceemulator-5554  dev">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vim学习">
-<meta property="og:url" content="http://yoursite.com/2016/03/19/Vim学习/index.html">
+<meta property="og:title" content="ADB的一些操作">
+<meta property="og:url" content="http://yoursite.com/2016/03/25/ADB的一些操作/index.html">
 <meta property="og:site_name" content="生命不息，折腾不止">
-<meta property="og:description" content="开始学习Vim的操作，一边学习一边纪录。Vim编辑器是一个模式编辑器。在不同模式下的行为和操作都是截然不同的。两个基本的模式就是标准模式 ( Normal ) 和编辑模式 ( Insert )。在标准模式下，你输入的每一个字符都会被认为是一个命令。在编辑模式下表示输入的字符是真正的文本内容。
-打开文件
-1vim filename
-进入编辑模式(输入i时，底部会出现 -- INSERT --的提示)">
-<meta property="og:updated_time" content="2016-03-20T15:26:28.000Z">
+<meta property="og:description" content="全名：Android Debug Bridge，Android下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。
+先通过简单的几个命令来熟悉一下吧！
+[查看当前连接PC的所有设备]
+12345adb devices//你会看到设备的序列号和状态e4b25377        deviceemulator-5554  dev">
+<meta property="og:updated_time" content="2016-03-25T15:56:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Vim学习">
-<meta name="twitter:description" content="开始学习Vim的操作，一边学习一边纪录。Vim编辑器是一个模式编辑器。在不同模式下的行为和操作都是截然不同的。两个基本的模式就是标准模式 ( Normal ) 和编辑模式 ( Insert )。在标准模式下，你输入的每一个字符都会被认为是一个命令。在编辑模式下表示输入的字符是真正的文本内容。
-打开文件
-1vim filename
-进入编辑模式(输入i时，底部会出现 -- INSERT --的提示)">
+<meta name="twitter:title" content="ADB的一些操作">
+<meta name="twitter:description" content="全名：Android Debug Bridge，Android下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。
+先通过简单的几个命令来熟悉一下吧！
+[查看当前连接PC的所有设备]
+12345adb devices//你会看到设备的序列号和状态e4b25377        deviceemulator-5554  dev">
 
 
 
@@ -93,7 +93,7 @@
   };
 </script>
 
-  <title> Vim学习 | 生命不息，折腾不止 </title>
+  <title> ADB的一些操作 | 生命不息，折腾不止 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -203,7 +203,7 @@
             
             
               
-                Vim学习
+                ADB的一些操作
               
             
           </h1>
@@ -215,8 +215,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-19T23:54:39+08:00" content="2016-03-19">
-              2016-03-19
+            <time itemprop="dateCreated" datetime="2016-03-25T23:56:06+08:00" content="2016-03-25">
+              2016-03-25
             </time>
           </span>
 
@@ -242,55 +242,42 @@
       
 
       
-        <h3 id="u5F00_u59CB_u5B66_u4E60Vim_u7684_u64CD_u4F5C_uFF0C_u4E00_u8FB9_u5B66_u4E60_u4E00_u8FB9_u7EAA_u5F55_u3002"><a href="#u5F00_u59CB_u5B66_u4E60Vim_u7684_u64CD_u4F5C_uFF0C_u4E00_u8FB9_u5B66_u4E60_u4E00_u8FB9_u7EAA_u5F55_u3002" class="headerlink" title="开始学习Vim的操作，一边学习一边纪录。"></a><strong>开始学习Vim的操作，一边学习一边纪录。</strong></h3><p><strong>Vim编辑器是一个模式编辑器。在不同模式下的行为和操作都是截然不同的。两个基本的模式就是标准模式 ( Normal ) 和编辑模式 ( Insert )。在标准模式下，你输入的每一个字符都会被认为是一个命令。在编辑模式下表示输入的字符是真正的文本内容。</strong></p>
-<p><strong>打开文件</strong></p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">vim</span> filename</span><br></pre></td></tr></table></figure>
-<p><strong>进入编辑模式(输入</strong><code>i</code><strong>时，底部会出现</strong> <code>-- INSERT --</code><strong>的提示)</strong></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">i</span></span><br></pre></td></tr></table></figure>
-<p><strong>上面的</strong><code>i</code><strong>是在当前光标所在位置进行编辑，但如果我想直接新建一行，在新的一行里面编辑呢？可以使用</strong><code>o</code><strong>，作用就相当于普通的</strong><code>Enter</code><strong> :</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o</span><br></pre></td></tr></table></figure>
-<p><strong>在任何情况下，按下</strong><code>esc</code><strong>键时，都会返回到 Normal 模式。( Normal 是默认的工作模式，界面上不会出现任何类似</strong><code>-- INSERT --</code><strong>这样的字符提示)</strong></p>
-<p><strong>移动光标,在Normal模式下，可以通过下面的命令来移动光标：</strong></p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">h</span>	左</span><br><span class="line">j	下</span><br><span class="line">k	上</span><br><span class="line"><span class="keyword">l</span>	右</span><br></pre></td></tr></table></figure>
-<p><strong>在很多情况下，这几个命令是提高效率很好的方法，由于电脑的箭头键一般都是在键盘的右下角，如果每次使用箭头键去移动光标，那你不得不把手从正在敲命令或编辑文档的手稍稍的挪一个位置，完成之后再回到原来的姿势，别看这小动作花不了多少时间，那如果做很多很多次呢？所以说使用<code>hjkl</code>还是有很大的好处。</strong><br><a id="more"></a><br><strong>撤销，有些情况下我们可能会操作失误，比如多删除了一些东西，这个时候想撤销之前的操作，那么就用到了下面这个命令，对应普通编辑器中的</strong><code>cart</code><strong>+</strong><code>z</code><strong>：</strong></p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">u</span></span><br></pre></td></tr></table></figure>
-<p><strong>把当前已修改内容另存为一个新的文件 temp_file</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pseudo">:w</span> <span class="tag">temp_file</span></span><br></pre></td></tr></table></figure>
-<p><strong>退出</strong></p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">:q</span></span><br></pre></td></tr></table></figure>
-<p><strong>保存和退出一起使用，注意顺序，现保存再退出</strong></p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">:wq</span></span><br></pre></td></tr></table></figure>
-<p><strong>强制退出(当前修改内容不会保存)</strong></p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">:q!</span></span><br></pre></td></tr></table></figure>
-<p><strong>除了上面几种命令外，还可以使用</strong><code>ZZ</code><strong>来退出文件，作用与</strong><code>:wq</code><strong>一样，都是保存当前文件并退出(注意是大写的</strong><code>ZZ</code><strong>)</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ZZ</span><br></pre></td></tr></table></figure>
-<p><strong>保存文件有时出现</strong> <code>readonly&#39; option is set (add ! to override)</code> <strong>的问题，是因为没有权限导致的，有两种解决方案</strong></p>
-<ul>
-<li><strong>取消只读模式</strong></li>
-</ul>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="keyword">set</span> noreadonly</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong> 使用 root 权限保存</strong></li>
-</ul>
-<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="function_or_atom">w</span> <span class="exclamation_mark">!</span><span class="function_or_atom">sudo</span> <span class="function_or_atom">tee</span> <span class="comment">%</span></span><br></pre></td></tr></table></figure>
-<h3 id="u719F_u6089_u4E0A_u9762_u4E00_u4E9B_u547D_u4EE4_u57FA_u672C_u4E0A_u5C31_u53EF_u4EE5_u5BF9_u6587_u4EF6_u8FDB_u884C_u6700_u57FA_u672C_u7684_u7F16_u8F91_u64CD_u4F5C_u4E86_uFF0C_u4E0B_u9762_u662F_u4E00_u4E9B_u6BD4_u8F83_u5E38_u7528_26amp_3B_u5B9E_u7528_u7684_u547D_u4EE4_uFF1A"><a href="#u719F_u6089_u4E0A_u9762_u4E00_u4E9B_u547D_u4EE4_u57FA_u672C_u4E0A_u5C31_u53EF_u4EE5_u5BF9_u6587_u4EF6_u8FDB_u884C_u6700_u57FA_u672C_u7684_u7F16_u8F91_u64CD_u4F5C_u4E86_uFF0C_u4E0B_u9762_u662F_u4E00_u4E9B_u6BD4_u8F83_u5E38_u7528_26amp_3B_u5B9E_u7528_u7684_u547D_u4EE4_uFF1A" class="headerlink" title="熟悉上面一些命令基本上就可以对文件进行最基本的编辑操作了，下面是一些比较常用&amp;实用的命令："></a><strong>熟悉上面一些命令基本上就可以对文件进行最基本的编辑操作了，下面是一些比较常用&amp;实用的命令：</strong></h3><p><strong>移动光标到行尾，对应键盘上的</strong><code>End</code><strong>键</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$</span><br></pre></td></tr></table></figure>
-<p><strong>移动光标到行首（第一个非空白字符上），对应键盘上的</strong><code>Home</code><strong>键</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p><strong>保存，输入这个命令就相当于在普通编辑器中按下</strong><code>cart</code><strong>+</strong><code>s</code></p>
-<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">:w</span></span><br></pre></td></tr></table></figure>
-<p><strong>删除字符，Normal 模式下，删除字符只需要把光标移到该字符上，然后按下</strong><code>x</code><strong>，ok，你会发现这个字符已经不见了。</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x</span><br></pre></td></tr></table></figure>
-<p><strong>删除光标位置前一个字符(大写的</strong><code>x</code><strong>)</strong></p>
-<figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">X</span></span><br></pre></td></tr></table></figure>
-<p><strong>删除光标所在位置至行尾的内容,大写的</strong><code>d</code></p>
-<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">D</span></span><br></pre></td></tr></table></figure>
-<p><strong>删除一整行</strong></p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pseudo">dd</span></span><br></pre></td></tr></table></figure>
-<p><strong>删除当前行至文件尾的内容</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dG</span><br></pre></td></tr></table></figure>
-<p><strong>删除当前行至文件头的内容</strong></p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dgg</span><br></pre></td></tr></table></figure>
+        <p><strong>全名：</strong><code>Android Debug Bridge</code><strong>，</strong><code>Android</code><strong>下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。</strong></p>
+<p><strong>先通过简单的几个命令来熟悉一下吧</strong>！</p>
+<p><strong>[查看当前连接PC的所有设备]</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br><span class="line"></span><br><span class="line"><span class="comment">//你会看到设备的序列号和状态</span></span><br><span class="line">e4b25377        device</span><br><span class="line">emulator-<span class="number">5554</span>  device</span><br></pre></td></tr></table></figure>
+<h4 id="apk_u64CD_u4F5C"><a href="#apk_u64CD_u4F5C" class="headerlink" title="apk操作"></a>apk操作</h4><p><strong>[安装</strong><code>apk</code><strong>到手机上,</strong><code>path</code><strong>本地路径，指向一个</strong><code>apk</code><strong>文件]</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="operator"><span class="keyword">install</span> <span class="keyword">path</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>[从手机上卸载应用,在命令后加上对应包名] (在普通情况下，只能卸载第三方应用，系统自带的基础应用是没有权限卸载的)</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall com<span class="class">.test</span><span class="class">.app</span></span><br></pre></td></tr></table></figure>
+<p><strong>[显示设备所有已安装的应用包名]</strong></p>
+<p><strong>注：下面这些命令在</strong><code>adb shell</code><strong>之后进行,也可以在每个命令前加上</strong><code>adb</code><strong>，都是一样的效果。</strong><br><a id="more"></a><br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm <span class="type">list</span> packages</span><br></pre></td></tr></table></figure></p>
+<p><strong>[查看某一个应用的</strong><code>apk</code><strong>文件路径,在命令后加上对应包名]</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm path com<span class="class">.android</span><span class="class">.email</span></span><br></pre></td></tr></table></figure>
+<p><strong>[清除应用信息,也是通过包名,清空</strong><code>data/data/包名</code><strong>下的所有文件信息]</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm <span class="attribute">clear</span> com<span class="class">.android</span><span class="class">.email</span></span><br></pre></td></tr></table></figure>
+<p><strong>[强制关闭某一个应用程序]</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">am force-<span class="operator"><span class="keyword">stop</span> <span class="keyword">package</span>-<span class="keyword">name</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="u6587_u4EF6_u64CD_u4F5C"><a href="#u6587_u4EF6_u64CD_u4F5C" class="headerlink" title="文件操作"></a>文件操作</h4><p><strong>[从手机导出文件到本地，命令很好理解的，把</strong><code>remote</code><strong>路径的文件下载到</strong><code>local</code><strong>路径中]</strong></p>
+<p><code>remote</code><strong>表示手机上的文件路径</strong></p>
+<p><code>local</code><strong>表示本地路径</strong></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull remote <span class="keyword">local</span></span><br></pre></td></tr></table></figure>
+<p><strong>[把本地文件导入进手机中,与上一个命令刚好相反］</strong></p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="keyword">push</span> <span class="keyword">local</span> remote</span><br></pre></td></tr></table></figure>
+<p><strong>[其他]</strong></p>
+<p><code>cd</code>、<code>rm</code>、<code>cp</code>、<code>mv</code>、<code>touch</code><strong>这些基础操作与</strong><code>linux</code><strong>下命令基本相同，这里就不一个个举例子了哈。</strong></p>
+<h4 id="u65E5_u5FD7_u64CD_u4F5C"><a href="#u65E5_u5FD7_u64CD_u4F5C" class="headerlink" title="日志操作"></a>日志操作</h4><p><strong>相信每一个</strong><code>Android</code><strong>开发者对</strong><code>logcat</code><strong>都不陌生，通常我们在</strong><code>Eclipse</code><strong>、</strong><code>**Android Studio</code><strong>的控制台中都会用到这个来查看程序输出的</strong><code>log</code><strong>信息，今天我们用</strong><code>adb</code><strong>命令来试一试。</strong></p>
+<p><strong>基本格式为: </strong></p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb logcat <span class="string">[option]</span> <span class="string">[filter-specs]</span></span><br></pre></td></tr></table></figure>
+<p><strong>后面两个参数表示显示的选项和过滤的条件，Android官方提供了很多的参数，我在这里先展示几种体验体验哈。</strong></p>
+<p><strong>还记得吗？我们在程序中输出log时，通常是用</strong><code>android.util.Log</code><strong>这个工具类的，为我们提供了如下几个方法：</strong></p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Log</span>.v(<span class="string">"tag"</span>,<span class="string">"info"</span>); <span class="comment">//VERBOSE</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span>.<span class="literal">d</span>(<span class="string">"tag"</span>,<span class="string">"info"</span>); <span class="comment">//DEBUG</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span>.<span class="literal">i</span>(<span class="string">"tag"</span>,<span class="string">"infl"</span>); <span class="comment">//INFO</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span>.<span class="literal">w</span>(<span class="string">"tag"</span>,<span class="string">"info"</span>); <span class="comment">//WARN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span>.<span class="literal">e</span>(<span class="string">"tag"</span>,<span class="string">"infl"</span>); <span class="comment">//ERROR</span></span><br></pre></td></tr></table></figure>
+<p><strong>然后就出现了我们下面的这些参数：</strong></p>
+<p><code>*:V</code>、<code>*:D</code>、<code>*:I</code>、<code>*:W</code>、<code>*:E</code></p>
+<p><strong>一看就明显跟上面那几个方法名对应嘛，那我们接下来试一下：</strong></p>
+<p><strong>在程序中输出一句</strong> <code>Log.i(&quot;tag&quot;,&quot;info&quot;);</code><strong>,然后在命令编辑器中敲下：</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">adb</span> <span class="tag">logcat</span> *<span class="pseudo">:E</span></span><br></pre></td></tr></table></figure>
+<h4 id="u5B66_u4E60_u94FE_u63A5_uFF1A"><a href="#u5B66_u4E60_u94FE_u63A5_uFF1A" class="headerlink" title="学习链接："></a>学习链接：</h4><p><a href="http://adbshell.com/" target="_blank" rel="external">adbshell.com</a></p>
 
       
     </div>
@@ -308,17 +295,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/14/Git基础操作/" rel="next" title="Git基础操作">
-                <i class="fa fa-chevron-left"></i> Git基础操作
+              <a href="/2016/03/19/Vim学习/" rel="next" title="Vim学习">
+                <i class="fa fa-chevron-left"></i> Vim学习
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/25/ADB的一些操作/" rel="prev" title="ADB的一些操作">
-                ADB的一些操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -464,7 +447,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5F00_u59CB_u5B66_u4E60Vim_u7684_u64CD_u4F5C_uFF0C_u4E00_u8FB9_u5B66_u4E60_u4E00_u8FB9_u7EAA_u5F55_u3002"><span class="nav-number">1.</span> <span class="nav-text">开始学习Vim的操作，一边学习一边纪录。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u719F_u6089_u4E0A_u9762_u4E00_u4E9B_u547D_u4EE4_u57FA_u672C_u4E0A_u5C31_u53EF_u4EE5_u5BF9_u6587_u4EF6_u8FDB_u884C_u6700_u57FA_u672C_u7684_u7F16_u8F91_u64CD_u4F5C_u4E86_uFF0C_u4E0B_u9762_u662F_u4E00_u4E9B_u6BD4_u8F83_u5E38_u7528_26amp_3B_u5B9E_u7528_u7684_u547D_u4EE4_uFF1A"><span class="nav-number">2.</span> <span class="nav-text">熟悉上面一些命令基本上就可以对文件进行最基本的编辑操作了，下面是一些比较常用&实用的命令：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#apk_u64CD_u4F5C"><span class="nav-number">1.</span> <span class="nav-text">apk操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6587_u4EF6_u64CD_u4F5C"><span class="nav-number">2.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u65E5_u5FD7_u64CD_u4F5C"><span class="nav-number">3.</span> <span class="nav-text">日志操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5B66_u4E60_u94FE_u63A5_uFF1A"><span class="nav-number">4.</span> <span class="nav-text">学习链接：</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
