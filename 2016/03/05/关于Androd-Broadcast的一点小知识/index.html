@@ -60,14 +60,15 @@
 <meta name="description" content="先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）
 系统广播 由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Androd Broadcast的一点小知识">
+<meta property="og:title" content="Androd Broadcast小解">
 <meta property="og:url" content="http://yoursite.com/2016/03/05/关于Androd-Broadcast的一点小知识/index.html">
 <meta property="og:site_name" content="生命不息，折腾不止">
 <meta property="og:description" content="先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）
 系统广播 由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，">
-<meta property="og:updated_time" content="2016-03-25T14:21:00.000Z">
+<meta property="og:image" content="http://yoursite.com/../images/12638.jpg">
+<meta property="og:updated_time" content="2016-03-26T12:48:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于Androd Broadcast的一点小知识">
+<meta name="twitter:title" content="Androd Broadcast小解">
 <meta name="twitter:description" content="先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）
 系统广播 由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，">
 
@@ -77,7 +78,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"always"},
+    sidebar: {"position":"left","display":"expand on posts automatically. Default."},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -87,7 +88,7 @@
   };
 </script>
 
-  <title> 关于Androd Broadcast的一点小知识 | 生命不息，折腾不止 </title>
+  <title> Androd Broadcast小解 | 生命不息，折腾不止 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -197,7 +198,7 @@
             
             
               
-                关于Androd Broadcast的一点小知识
+                Androd Broadcast小解
               
             
           </h1>
@@ -218,6 +219,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/05/关于Androd-Broadcast的一点小知识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/05/关于Androd-Broadcast的一点小知识/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -236,7 +244,7 @@
       
 
       
-        <p><strong>先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）</strong></p>
+        <p><img src="/../images/12638.jpg" alt="此处插入界面总体布局图片"><br><strong>先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）</strong></p>
 <h4 id="u7CFB_u7EDF_u5E7F_u64AD"><a href="#u7CFB_u7EDF_u5E7F_u64AD" class="headerlink" title="系统广播"></a><strong>系统广播</strong></h4><p> <strong>由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，只需要按照普通方式来注册receiver就OK。关于Android的一些广播动作API：</strong><a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_TIME_TICK" target="_blank" rel="external">Standard Broadcast Actions</a></p>
 <h4 id="u81EA_u5B9A_u4E49_u5E7F_u64AD"><a href="#u81EA_u5B9A_u4E49_u5E7F_u64AD" class="headerlink" title="自定义广播"></a><strong>自定义广播</strong></h4><p><strong>光是系统广播的Action肯定是满足不了我们的要求的，所以我们可以通过自定义广播完成部分需求，比如我在一个Service里面完成了某件事情，现在我要通知一个界面做些处理，这个时候就可以用自定义广播，关键点就是</strong><code>IntentFilter</code><strong>的</strong><code>action</code><strong>设置,注意不要跟系统的</strong><code>action</code><strong>重名。</strong></p>
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">IntentFilter <span class="built_in">filter</span> = <span class="keyword">new</span> IntentFilter();</span><br><span class="line"><span class="built_in">filter</span>.addAction(<span class="string">"xx.xx.xxx"</span>);</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">&lt;intent-<span class="built_in">filter</span>&gt;</span><br><span class="line">   &lt;action android:name=<span class="string">"xx.xx.xxx"</span> /&gt;</span><br><span class="line">&lt;/intent-<span class="built_in">filter</span>&gt;</span><br></pre></td></tr></table></figure>
@@ -295,27 +303,10 @@
 
     <div class="post-spread">
       
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
 
       
     </div>
@@ -328,6 +319,13 @@
 
           
   <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -390,7 +388,7 @@
               <span class="links-of-author-item">
                 <a href="http://github.com/jason-chenjun" target="_blank">
                   
-                    <i class="fa fa-gitHub"></i> GitHub
+                    <i class="fa fa-github"></i> GitHub
                   
                 </a>
               </span>
@@ -690,6 +688,27 @@
 
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'jason-chen294';
+      var disqus_identifier = '2016/03/05/关于Androd-Broadcast的一点小知识/';
+      var disqus_title = 'Androd Broadcast小解';
+      var disqus_url = 'http://yoursite.com/2016/03/05/关于Androd-Broadcast的一点小知识/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
   
 
 

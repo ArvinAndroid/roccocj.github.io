@@ -69,7 +69,8 @@
 先通过简单的几个命令来熟悉一下吧！
 [查看当前连接PC的所有设备]
 12345adb devices//你会看到设备的序列号和状态e4b25377        deviceemulator-5554  dev">
-<meta property="og:updated_time" content="2016-03-25T15:56:51.000Z">
+<meta property="og:image" content="http://yoursite.com/../images/16032.jpg">
+<meta property="og:updated_time" content="2016-03-26T12:44:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ADB的一些操作">
 <meta name="twitter:description" content="全名：Android Debug Bridge，Android下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。
@@ -83,7 +84,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"always"},
+    sidebar: {"position":"left","display":"expand on posts automatically. Default."},
     fancybox: true,
     motion: true,
     duoshuo: {
@@ -224,6 +225,13 @@
 
           
             
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/25/ADB的一些操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/25/ADB的一些操作/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -242,7 +250,7 @@
       
 
       
-        <p><strong>全名：</strong><code>Android Debug Bridge</code><strong>，</strong><code>Android</code><strong>下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。</strong></p>
+        <p><img src="/../images/16032.jpg" alt="此处插入界面总体布局图片"><br><strong>全名：</strong><code>Android Debug Bridge</code><strong>，</strong><code>Android</code><strong>下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。</strong></p>
 <p><strong>先通过简单的几个命令来熟悉一下吧</strong>！</p>
 <p><strong>[查看当前连接PC的所有设备]</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br><span class="line"></span><br><span class="line"><span class="comment">//你会看到设备的序列号和状态</span></span><br><span class="line">e4b25377        device</span><br><span class="line">emulator-<span class="number">5554</span>  device</span><br></pre></td></tr></table></figure>
@@ -266,18 +274,19 @@
 <figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="keyword">push</span> <span class="keyword">local</span> remote</span><br></pre></td></tr></table></figure>
 <p><strong>[其他]</strong></p>
 <p><code>cd</code>、<code>rm</code>、<code>cp</code>、<code>mv</code>、<code>touch</code><strong>这些基础操作与</strong><code>linux</code><strong>下命令基本相同，这里就不一个个举例子了哈。</strong></p>
-<h4 id="u65E5_u5FD7_u64CD_u4F5C"><a href="#u65E5_u5FD7_u64CD_u4F5C" class="headerlink" title="日志操作"></a>日志操作</h4><p><strong>相信每一个</strong><code>Android</code><strong>开发者对</strong><code>logcat</code><strong>都不陌生，通常我们在</strong><code>Eclipse</code><strong>、</strong><code>**Android Studio</code><strong>的控制台中都会用到这个来查看程序输出的</strong><code>log</code><strong>信息，今天我们用</strong><code>adb</code><strong>命令来试一试。</strong></p>
+<h4 id="u65E5_u5FD7_u64CD_u4F5C"><a href="#u65E5_u5FD7_u64CD_u4F5C" class="headerlink" title="日志操作"></a>日志操作</h4><p><strong>相信每一个</strong><code>Android</code><strong>开发者对</strong><code>logcat</code><strong>都不陌生，通常我们在</strong><code>Eclipse</code><strong>、</strong><code>Android Studio</code><strong>的控制台中都会用到这个来查看监控输出的</strong><code>log</code><strong>信息，今天我们用</strong><code>adb</code><strong>命令来试一试。</strong></p>
 <p><strong>基本格式为: </strong></p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb logcat <span class="string">[option]</span> <span class="string">[filter-specs]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb logcat <span class="string">[option]</span> <span class="string">[filter-specs]</span>e</span><br></pre></td></tr></table></figure>
 <p><strong>后面两个参数表示显示的选项和过滤的条件，Android官方提供了很多的参数，我在这里先展示几种体验体验哈。</strong></p>
 <p><strong>还记得吗？我们在程序中输出log时，通常是用</strong><code>android.util.Log</code><strong>这个工具类的，为我们提供了如下几个方法：</strong></p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Log</span>.v(<span class="string">"tag"</span>,<span class="string">"info"</span>); <span class="comment">//VERBOSE</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span>.<span class="literal">d</span>(<span class="string">"tag"</span>,<span class="string">"info"</span>); <span class="comment">//DEBUG</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span>.<span class="literal">i</span>(<span class="string">"tag"</span>,<span class="string">"infl"</span>); <span class="comment">//INFO</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span>.<span class="literal">w</span>(<span class="string">"tag"</span>,<span class="string">"info"</span>); <span class="comment">//WARN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span>.<span class="literal">e</span>(<span class="string">"tag"</span>,<span class="string">"infl"</span>); <span class="comment">//ERROR</span></span><br></pre></td></tr></table></figure>
-<p><strong>然后就出现了我们下面的这些参数：</strong></p>
-<p><code>*:V</code>、<code>*:D</code>、<code>*:I</code>、<code>*:W</code>、<code>*:E</code></p>
-<p><strong>一看就明显跟上面那几个方法名对应嘛，那我们接下来试一下：</strong></p>
-<p><strong>在程序中输出一句</strong> <code>Log.i(&quot;tag&quot;,&quot;info&quot;);</code><strong>,然后在命令编辑器中敲下：</strong></p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">adb</span> <span class="tag">logcat</span> *<span class="pseudo">:E</span></span><br></pre></td></tr></table></figure>
-<h4 id="u5B66_u4E60_u94FE_u63A5_uFF1A"><a href="#u5B66_u4E60_u94FE_u63A5_uFF1A" class="headerlink" title="学习链接："></a>学习链接：</h4><p><a href="http://adbshell.com/" target="_blank" rel="external">adbshell.com</a></p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Log</span><span class="built_in">.</span>v(<span class="built_in">TAG</span>,<span class="string">""</span>); <span class="comment">//VERBOSE</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span><span class="built_in">.</span>d(<span class="built_in">TAG</span>,<span class="string">""</span>); <span class="comment">//DEBUG</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span><span class="built_in">.</span>i(<span class="built_in">TAG</span>,<span class="string">""</span>); <span class="comment">//INFO</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span><span class="built_in">.</span>w(<span class="built_in">TAG</span>,<span class="string">""</span>); <span class="comment">//WARN</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Log</span><span class="built_in">.</span>e(<span class="built_in">TAG</span>,<span class="string">""</span>); <span class="comment">//ERROR</span></span><br></pre></td></tr></table></figure>
+<p><strong>然后就出现了我们下面的这些参数：</strong><code>*:V</code>、<code>*:D</code>、<code>*:I</code>、<code>*:W</code>、<code>*:E</code></p>
+<p><strong>一看就明显跟上面那几个方法名对应嘛，那我们接下来试一下(注：按下</strong><code>Ctrl</code><strong>+</strong><code>C</code>)<strong>停止监控</strong></p>
+<p><strong>在程序中输出一句</strong> <code>Log.v(TAG,&quot;info&quot;);</code><strong>,然后在命令编辑器中敲下：
+</strong><code>adb logcat *:V</code><strong>，就会看到刚刚在程序里面输出的信息了。不过这样我们还看到了很多系统输出的信息，绝大部分我们并不需要看到，只想看到很简洁的输出，那么看看下面这个命令，也是我用的最多的一种</strong></p>
+<p><strong>用来查看</strong><code>Android</code><strong>系统异常，也就是</strong><code>RuntimeException</code><strong>，其中</strong><code>AndroidRuntime:E</code><strong>只是一个标签名，查看自定义的Log输出时，只需要换成自定义的</strong><code>TAG</code><strong>就行了</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">logcat -v <span class="tag">time</span> -s AndroidRuntime:E</span><br></pre></td></tr></table></figure>
+<h4 id="u66F4_u5B8C_u6574_u7684adb_u547D_u4EE4"><a href="#u66F4_u5B8C_u6574_u7684adb_u547D_u4EE4" class="headerlink" title="更完整的adb命令"></a>更完整的adb命令</h4><p><a href="http://adbshell.com/" target="_blank" rel="external">adbshell.com</a></p>
 
       
     </div>
@@ -316,27 +325,10 @@
 
     <div class="post-spread">
       
-        <!-- JiaThis Button BEGIN -->
-<div class="jiathis_style">
-  <a class="jiathis_button_tsina"></a>
-  <a class="jiathis_button_tqq"></a>
-  <a class="jiathis_button_weixin"></a>
-  <a class="jiathis_button_cqq"></a>
-  <a class="jiathis_button_douban"></a>
-  <a class="jiathis_button_renren"></a>
-  <a class="jiathis_button_qzone"></a>
-  <a class="jiathis_button_kaixin001"></a>
-  <a class="jiathis_button_copy"></a>
-  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
-  <a class="jiathis_counter_style"></a>
-</div>
-<script type="text/javascript" >
-  var jiathis_config={
-    hideMore:false
-  }
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 </script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
-<!-- JiaThis Button END -->
 
       
     </div>
@@ -349,6 +341,13 @@
 
           
   <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     
   </div>
 
@@ -411,7 +410,7 @@
               <span class="links-of-author-item">
                 <a href="http://github.com/jason-chenjun" target="_blank">
                   
-                    <i class="fa fa-gitHub"></i> GitHub
+                    <i class="fa fa-github"></i> GitHub
                   
                 </a>
               </span>
@@ -447,7 +446,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#apk_u64CD_u4F5C"><span class="nav-number">1.</span> <span class="nav-text">apk操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6587_u4EF6_u64CD_u4F5C"><span class="nav-number">2.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u65E5_u5FD7_u64CD_u4F5C"><span class="nav-number">3.</span> <span class="nav-text">日志操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5B66_u4E60_u94FE_u63A5_uFF1A"><span class="nav-number">4.</span> <span class="nav-text">学习链接：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#apk_u64CD_u4F5C"><span class="nav-number">1.</span> <span class="nav-text">apk操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6587_u4EF6_u64CD_u4F5C"><span class="nav-number">2.</span> <span class="nav-text">文件操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u65E5_u5FD7_u64CD_u4F5C"><span class="nav-number">3.</span> <span class="nav-text">日志操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u66F4_u5B8C_u6574_u7684adb_u547D_u4EE4"><span class="nav-number">4.</span> <span class="nav-text">更完整的adb命令</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -711,6 +710,27 @@
 
 
 
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'jason-chen294';
+      var disqus_identifier = '2016/03/25/ADB的一些操作/';
+      var disqus_title = 'ADB的一些操作';
+      var disqus_url = 'http://yoursite.com/2016/03/25/ADB的一些操作/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
   
 
 
