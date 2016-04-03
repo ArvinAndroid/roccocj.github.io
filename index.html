@@ -196,6 +196,110 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/03/Android数据存储－SQLite/" itemprop="url">
+                  Android数据存储－SQLite
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-03T18:33:25+08:00" content="2016-04-03">
+              2016-04-03
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/03/Android数据存储－SQLite/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/03/Android数据存储－SQLite/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="/../images/22254.jpg" alt="此处插入界面总体布局图片"></p>
+<h4 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h4><p><code>Android</code><strong>的数据库实现，依托于当下最流行的开源嵌入式数据库</strong><code>SQLite</code><strong>,一个轻量的关系型数据库。在</strong><code>Android</code><strong>中，每个应用的数据库文件都存储在</strong><code>data/data/package/databases/</code><strong>目录下。</strong></p>
+<p><strong>我们通过</strong><code>android.database.sqlite.SQLiteDatabase</code><strong>来表示一个数据库对象，</strong><code>SQLiteDatabase</code><strong>提供了两种模式，使得我们可以对数据库进行增删改查的基本操作。</strong></p>
+<h4 id="u4F7F_u7528"><a href="#u4F7F_u7528" class="headerlink" title="使用"></a>使用</h4><p><strong>最原始的方式就是通过SQL语句进行操作，调用</strong><code>SQLiteDatabase.execSql</code><strong>或</strong><code>SQLiteDatabase.rawQuery</code><strong>执行操作，比如：</strong></p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//查询数据</span><br><span class="line"><span class="type">Cursor</span> <span class="literal">result</span> = db.rawQuery(<span class="string">"select * from table"</span>);</span><br><span class="line"></span><br><span class="line">//插入数据</span><br><span class="line">db.execSql(<span class="string">"insert into tables (column1,column2,column3) values (value1,value2,value3)"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>可以看到，跟普通的SQL语句完全没有任何区别。</strong></p>
+<p><strong>另外</strong><code>Android</code><strong>更加提倡使用结构化的方式操作数据库，这样即使我们不会</strong><code>SQL</code><strong>语句，照样也能对数据库进行增删改查基本操作，那就是使用我们最熟悉的面相对象的方式进行操作，比如：</strong><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/03/Android数据存储－SQLite/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/25/ADB的一些操作/" itemprop="url">
                   ADB的一些操作
                 </a>
@@ -745,7 +849,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
