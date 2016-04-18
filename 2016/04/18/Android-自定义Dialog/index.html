@@ -57,20 +57,20 @@
 
 
 
-<meta name="description" content="先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）
-系统广播 由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，">
+<meta name="description" content="介绍在Android中，我们经常会使用到Dialog这个控件，大致可以分为两种：系统Dialog、自定义Dialog。然而我们基本上很少用到系统Dialog，因为不是很美观，缺乏扩展性，可能满足我们的需求，所以我们经常使用的就是自定义Dialog！
+用法用法其实也非常简单，无非是新建一个类，继承android.app.Dialog类，然后在这个类里面干自己想干的事情！最基本的用法我就过多讲了哈～">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Androd Broadcast小解">
-<meta property="og:url" content="http://yoursite.com/2016/03/05/关于Androd-Broadcast的一点小知识/index.html">
+<meta property="og:title" content="Android-自定义Dialog">
+<meta property="og:url" content="http://yoursite.com/2016/04/18/Android-自定义Dialog/index.html">
 <meta property="og:site_name" content="生命不息，折腾不止">
-<meta property="og:description" content="先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）
-系统广播 由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，">
-<meta property="og:image" content="http://yoursite.com/../images/12638.jpg">
-<meta property="og:updated_time" content="2016-03-26T12:48:16.000Z">
+<meta property="og:description" content="介绍在Android中，我们经常会使用到Dialog这个控件，大致可以分为两种：系统Dialog、自定义Dialog。然而我们基本上很少用到系统Dialog，因为不是很美观，缺乏扩展性，可能满足我们的需求，所以我们经常使用的就是自定义Dialog！
+用法用法其实也非常简单，无非是新建一个类，继承android.app.Dialog类，然后在这个类里面干自己想干的事情！最基本的用法我就过多讲了哈～">
+<meta property="og:image" content="http://yoursite.com/../images/22713.jpg">
+<meta property="og:updated_time" content="2016-04-18T16:19:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Androd Broadcast小解">
-<meta name="twitter:description" content="先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）
-系统广播 由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，">
+<meta name="twitter:title" content="Android-自定义Dialog">
+<meta name="twitter:description" content="介绍在Android中，我们经常会使用到Dialog这个控件，大致可以分为两种：系统Dialog、自定义Dialog。然而我们基本上很少用到系统Dialog，因为不是很美观，缺乏扩展性，可能满足我们的需求，所以我们经常使用的就是自定义Dialog！
+用法用法其实也非常简单，无非是新建一个类，继承android.app.Dialog类，然后在这个类里面干自己想干的事情！最基本的用法我就过多讲了哈～">
 
 
 
@@ -88,7 +88,7 @@
   };
 </script>
 
-  <title> Androd Broadcast小解 | 生命不息，折腾不止 </title>
+  <title> Android-自定义Dialog | 生命不息，折腾不止 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -214,7 +214,7 @@
             
             
               
-                Androd Broadcast小解
+                Android-自定义Dialog
               
             
           </h1>
@@ -226,8 +226,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-05T17:22:04+08:00" content="2016-03-05">
-              2016-03-05
+            <time itemprop="dateCreated" datetime="2016-04-18T23:45:34+08:00" content="2016-04-18">
+              2016-04-18
             </time>
           </span>
 
@@ -237,8 +237,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/05/关于Androd-Broadcast的一点小知识/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/05/关于Androd-Broadcast的一点小知识/" itemprop="commentsCount"></span>
+                <a href="/2016/04/18/Android-自定义Dialog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/18/Android-自定义Dialog/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -260,23 +260,21 @@
       
 
       
-        <p><img src="/../images/12638.jpg" alt="此处插入界面总体布局图片"><br><strong>先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）</strong></p>
-<h4 id="u7CFB_u7EDF_u5E7F_u64AD"><a href="#u7CFB_u7EDF_u5E7F_u64AD" class="headerlink" title="系统广播"></a><strong>系统广播</strong></h4><p> <strong>由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，只需要按照普通方式来注册receiver就OK。关于Android的一些广播动作API：</strong><a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_TIME_TICK" target="_blank" rel="external">Standard Broadcast Actions</a></p>
-<h4 id="u81EA_u5B9A_u4E49_u5E7F_u64AD"><a href="#u81EA_u5B9A_u4E49_u5E7F_u64AD" class="headerlink" title="自定义广播"></a><strong>自定义广播</strong></h4><p><strong>光是系统广播的Action肯定是满足不了我们的要求的，所以我们可以通过自定义广播完成部分需求，比如我在一个Service里面完成了某件事情，现在我要通知一个界面做些处理，这个时候就可以用自定义广播，关键点就是</strong><code>IntentFilter</code><strong>的</strong><code>action</code><strong>设置,注意不要跟系统的</strong><code>action</code><strong>重名。</strong></p>
-<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">IntentFilter <span class="built_in">filter</span> = <span class="keyword">new</span> IntentFilter();</span><br><span class="line"><span class="built_in">filter</span>.addAction(<span class="string">"xx.xx.xxx"</span>);</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">&lt;intent-<span class="built_in">filter</span>&gt;</span><br><span class="line">   &lt;action android:name=<span class="string">"xx.xx.xxx"</span> /&gt;</span><br><span class="line">&lt;/intent-<span class="built_in">filter</span>&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="u65E0_u5E8F_u5E7F_u64AD"><a href="#u65E0_u5E8F_u5E7F_u64AD" class="headerlink" title="无序广播"></a><strong>无序广播</strong></h4><p><strong>顾名思义，大家应该就能知道的。不过说到底，接收还是有一个前后之分，两个app，到底哪个先接收到呢？这个我也不知道怎么说，不过我想，也许是按照app的安装顺序来吧(个人猜测)。</strong></p>
-<h4 id="u6709_u5E8F_u5E7F_u64AD_uFF08OrderedBroadcast_uFF09"><a href="#u6709_u5E8F_u5E7F_u64AD_uFF08OrderedBroadcast_uFF09" class="headerlink" title="有序广播（OrderedBroadcast）"></a><strong>有序广播（OrderedBroadcast）</strong></h4><p><strong>广播接收器收到后,可以调用</strong><code>abortBroadcast()</code><strong>方法终止这条广播的传递，表示我把这个信息截获了，不让后面的人知道。这里涉及到一个优先级(</strong><code>priority</code><strong>)，Android官方规定范围为</strong>-1000到1000<strong>之间。数值越大，则越先收到广播。设置：</strong><br><a id="more"></a></p>
-<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">IntentFilter <span class="built_in">filter</span> = <span class="keyword">new</span> IntentFilter();</span><br><span class="line"><span class="built_in">filter</span>.setPriority(<span class="number">1000</span>);</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">&lt;intent-<span class="built_in">filter</span> android:priority=<span class="string">"1000"</span>&gt;</span><br><span class="line">   &lt;action android:name=<span class="string">"xx.xx.xxx"</span> /&gt;</span><br><span class="line">&lt;/intent-<span class="built_in">filter</span>&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="u7C98_u6027_u5E7F_u64AD_28StickyBroadcast_29"><a href="#u7C98_u6027_u5E7F_u64AD_28StickyBroadcast_29" class="headerlink" title="粘性广播(StickyBroadcast)"></a><strong>粘性广播(StickyBroadcast)</strong></h4><p><strong>跟前面几种广播不同，Intent会一直保留到广播事件结束，也就是被接收。比如我现在发一个</strong><code>StickyBroadcast</code><strong>，然后过5秒钟启动一个Activity，在这个Activity里面动态注册一个Receiver接收刚刚发出的</strong><code>StickyBroadcast</code><strong>，是可以接收到的。要注意一点的是，</strong><code>StickyBroadcast</code><strong>需要额外添加一个权限：</strong></p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;uses-permission android:<span class="property">name</span>=<span class="string">"android.permission.BROADCAST_STICKY"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="u672C_u5730_u5E7F_u64AD_28LocalBroadcast_29"><a href="#u672C_u5730_u5E7F_u64AD_28LocalBroadcast_29" class="headerlink" title="本地广播(LocalBroadcast)"></a><strong>本地广播(LocalBroadcast)</strong></h4><p><strong>Android 5.0新增的一个广播类型，上面讲的广播类型都是全局的，系统内所有的app都能收到，但其实很多自己开发的app只需要在本身app内传递。那么就是这个了，</strong><code>LocalBroadcast</code><strong>！</strong></p>
-<p><strong>特点：广播发送后，范围只在本身app内，其它app并不会收到这个广播通知，由于是本地广播，顾名思义，系统也不会去管你，不用到系统那里去走一遍，效率自然也会更高。</strong></p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注册：</span></span><br><span class="line">LocalBroadcastManager.getInstance(context).registerReceiver(receiver,intentFilter);	</span><br><span class="line"><span class="comment">//发送</span></span><br><span class="line">LocalBroadcastManager.getInstance(context).sendBroadcast(intent)</span><br><span class="line"><span class="comment">//接收跟普通广播无异。</span></span><br></pre></td></tr></table></figure>
-<h4 id="u5173_u4E8E_u6CE8_u518C_u65B9_u5F0F_uFF1A"><a href="#u5173_u4E8E_u6CE8_u518C_u65B9_u5F0F_uFF1A" class="headerlink" title="关于注册方式："></a><strong>关于注册方式：</strong></h4><h5 id="u51B7_u6CE8_u518C_u548C_u70ED_u6CE8_u518C"><a href="#u51B7_u6CE8_u518C_u548C_u70ED_u6CE8_u518C" class="headerlink" title="冷注册和热注册"></a><strong>冷注册和热注册</strong></h5><ul>
-<li><strong>冷注册:即使程序未运行,也会收到系统or其他应用发出的广播（注册方式在AndroidManifest.xml中注册）。</strong></li>
-<li><strong>热注册:与冷注册相反，这个程序得在运行时才能收到发出的广播消息，否则是接收不到的（使用代码的方式注册）。</strong></li>
-</ul>
-<h4 id="u7ED3_u5C3E"><a href="#u7ED3_u5C3E" class="headerlink" title="结尾"></a><strong>结尾</strong></h4><p><strong>关于广播的注册、接收，网上已经有太多数不胜数的code了，有很多都写的很完整，我这里就不做太多的展示了，抱歉。我希望能帮到每一个看到这篇文章的朋友,谢谢！</strong></p>
+        <p><img src="/../images/22713.jpg" alt="此处插入界面总体布局图片"></p>
+<h4 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h4><p><strong>在</strong><code>Android</code><strong>中，我们经常会使用到</strong><code>Dialog</code><strong>这个控件，大致可以分为两种：</strong><code>系统Dialog</code><strong>、</strong><code>自定义Dialog</code><strong>。然而我们基本上很少用到</strong><code>系统Dialog</code><strong>，因为不是很美观，缺乏扩展性，可能满足我们的需求，所以我们经常使用的就是自定义</strong><code>Dialog</code><strong>！</strong></p>
+<h4 id="u7528_u6CD5"><a href="#u7528_u6CD5" class="headerlink" title="用法"></a>用法</h4><p><strong>用法其实也非常简单，无非是新建一个类，继承</strong><code>android.app.Dialog</code><strong>类，然后在这个类里面干自己想干的事情！最基本的用法我就过多讲了哈～</strong></p>
+<p><strong>每个Dialog对象中都包含一个Window对象，负责整个Dialog窗口的管理和构造。我们可以通过</strong><code>Window</code><strong>去设置Dialog的宽度、高度、处于屏幕的位置、背景等等一系列属性。</strong></p>
+<p><strong>比如将标题栏隐藏，可以通过设定</strong><code>Window.FEATURE_ NO_TITLE</code><strong>来实现：</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在构造函数中调用*/</span> </span><br><span class="line"><span class="function"><span class="title">requestWindowFeature</span><span class="params">(Window.FEATURE_NO_TITLE)</span></span>；</span><br></pre></td></tr></table></figure>
+<p><code>requestWindowFeature</code><strong>仅接收一个类型参数，如果开发者需要为该样式指定一些附加数据，则需要使用</strong><code>Window.setFeatureInt</code><strong>函数。比如说，如果开发者不是想消隐标题栏，而是自定义窗口标题栏标的样式，则可以利用</strong><code>Window.setFeatureInt</code><strong>来设定自定义标题栏的样式信息:</strong></p>
+ <figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在构造函数中标记一下，表明标题栏将自定义*/</span></span><br><span class="line">getWindow.requestWindowFeature(Window.FEATURE_CUSTOM_TITLE)；</span><br><span class="line"> </span><br><span class="line">setContentView（R.<span class="keyword">layout</span>.content_view）； </span><br><span class="line"></span><br><span class="line"><span class="comment">//设置自定义标题栏的样式</span></span><br><span class="line">getWindow().setFeatureInt（Window.FEATURE_CUSTOM_TITLE,R.<span class="keyword">layout</span>.custom_title);</span><br></pre></td></tr></table></figure>
+<p><strong>上面可能有人已经发现了，设置自定义标题栏样式是在</strong><code>setContentView()</code><strong>后进行的，这里需要注意一下，</strong><code>requestWindowFeature</code><strong>函数需要在</strong><code>setContentView</code><strong>之前调用，而 </strong><code>Window.setFeatureInt</code><strong>函数要在之后调用。原因是，对</strong><code>setContentView</code><strong>的调用将会导致整个界面控件的生成。因此，对控件样式的设定需要在该构造流程之前，而对具体控件对象的变更，则需要在整个界面控件构造完成之后进行。对</strong><code>requestWindowFeature</code><strong>函数和</strong><code>Window.setFeatureInt</code><strong>函数的所有调用， 都需要遵循这个编程模式，否则函数调用可能会失效甚至是出错。</strong></p>
+<h4 id="u4F7F_u7528WindowManager-LayoutParams"><a href="#u4F7F_u7528WindowManager-LayoutParams" class="headerlink" title="使用WindowManager.LayoutParams"></a>使用<code>WindowManager.LayoutParams</code></h4> <a id="more"></a>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//先创建一个Window.LayoutParams对象</span></span><br><span class="line">WindowManager.LayoutParams lp = <span class="keyword">new</span> WindowManager.LayoutParams();</span><br><span class="line"></span><br><span class="line"><span class="comment">//把本身WindowManager的LayoutParams属性复制过来</span></span><br><span class="line">lp.copyFrom(getWindow().getAttributes());</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置Dialog的位置，默认是剧中的</span></span><br><span class="line">lp.gravity = Gravity.CENTER;</span><br><span class="line"><span class="comment">//也可以设为 底部＋靠右</span></span><br><span class="line">lp.gravity = Gravity.BOTTOM | Gravity.RIGHT;</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置宽度和高度</span></span><br><span class="line">lp.<span class="variable">width</span> = <span class="number">400</span>;</span><br><span class="line">lp.<span class="variable">height</span> = <span class="number">500</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//最后把上面设置的属性赋到所在Window上去</span></span><br><span class="line">getWindow().setAttributes(lp);</span><br><span class="line"></span><br><span class="line"><span class="comment">//设置当前窗体背景为空</span></span><br><span class="line">getWindow().setBackgroundDrawable(<span class="keyword">null</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="u81EA_u5B9A_u4E49style"><a href="#u81EA_u5B9A_u4E49style" class="headerlink" title="自定义style"></a>自定义style</h4><p><strong>在</strong><code>styles.xml</code><strong>资源文件中新建一组</strong><code>style</code><strong>如下：</strong></p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;style <span class="property">name</span>=<span class="string">"style_custom_dialog"</span> parent=<span class="string">"@android:style/Theme.Dialog"</span>&gt;</span><br><span class="line"> &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:windowFrame"</span>&gt;@null&lt;/<span class="property">item</span>&gt;&lt;!<span class="comment">-- 边框 --&gt;</span></span><br><span class="line"> &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:windowIsFloating"</span>&gt;<span class="constant">true</span>&lt;/<span class="property">item</span>&gt;&lt;!<span class="comment">-- 是否浮现在activity之上 --&gt;</span></span><br><span class="line"> &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:windowIsTranslucent"</span>&gt;<span class="constant">false</span>&lt;/<span class="property">item</span>&gt;&lt;!<span class="comment">-- 半透明 --&gt;</span></span><br><span class="line"> &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:windowNoTitle"</span>&gt;<span class="constant">true</span>&lt;/<span class="property">item</span>&gt;&lt;!<span class="comment">-- 无标题 --&gt;</span></span><br><span class="line"> &lt;<span class="property">item</span> <span class="property">name</span>=<span class="string">"android:backgroundDimEnabled"</span>&gt;<span class="constant">false</span>&lt;/<span class="property">item</span>&gt;&lt;!<span class="comment">-- 模糊 --&gt;</span></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>然后在构造函数中调用：</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">super</span>(<span class="tag">context</span>,<span class="tag">R</span><span class="class">.style</span><span class="class">.style_custom_dialog</span>);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -294,17 +292,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/02/Hello/" rel="next" title="Hello">
-                <i class="fa fa-chevron-left"></i> Hello
+              <a href="/2016/04/03/Android数据存储－SQLite/" rel="next" title="Android数据存储－SQLite">
+                <i class="fa fa-chevron-left"></i> Android数据存储－SQLite
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/14/Git基础操作/" rel="prev" title="Git基础操作">
-                Git基础操作 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -440,7 +434,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#u7CFB_u7EDF_u5E7F_u64AD"><span class="nav-number">1.</span> <span class="nav-text">系统广播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u81EA_u5B9A_u4E49_u5E7F_u64AD"><span class="nav-number">2.</span> <span class="nav-text">自定义广播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u65E0_u5E8F_u5E7F_u64AD"><span class="nav-number">3.</span> <span class="nav-text">无序广播</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u6709_u5E8F_u5E7F_u64AD_uFF08OrderedBroadcast_uFF09"><span class="nav-number">4.</span> <span class="nav-text">有序广播（OrderedBroadcast）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7C98_u6027_u5E7F_u64AD_28StickyBroadcast_29"><span class="nav-number">5.</span> <span class="nav-text">粘性广播(StickyBroadcast)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u672C_u5730_u5E7F_u64AD_28LocalBroadcast_29"><span class="nav-number">6.</span> <span class="nav-text">本地广播(LocalBroadcast)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5173_u4E8E_u6CE8_u518C_u65B9_u5F0F_uFF1A"><span class="nav-number">7.</span> <span class="nav-text">关于注册方式：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#u51B7_u6CE8_u518C_u548C_u70ED_u6CE8_u518C"><span class="nav-number">7.1.</span> <span class="nav-text">冷注册和热注册</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7ED3_u5C3E"><span class="nav-number">8.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#u4ECB_u7ECD"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u7528_u6CD5"><span class="nav-number">2.</span> <span class="nav-text">用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4F7F_u7528WindowManager-LayoutParams"><span class="nav-number">3.</span> <span class="nav-text">使用WindowManager.LayoutParams</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u81EA_u5B9A_u4E49style"><span class="nav-number">4.</span> <span class="nav-text">自定义style</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
@@ -708,9 +702,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jason-chen294';
-      var disqus_identifier = '2016/03/05/关于Androd-Broadcast的一点小知识/';
-      var disqus_title = 'Androd Broadcast小解';
-      var disqus_url = 'http://yoursite.com/2016/03/05/关于Androd-Broadcast的一点小知识/';
+      var disqus_identifier = '2016/04/18/Android-自定义Dialog/';
+      var disqus_title = 'Android-自定义Dialog';
+      var disqus_url = 'http://yoursite.com/2016/04/18/Android-自定义Dialog/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

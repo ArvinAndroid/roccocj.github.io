@@ -73,11 +73,11 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Muse',
-    sidebar: {"position":"left","display":"expand on posts automatically. Default."},
+    sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
     duoshuo: {
-      userId: 6265640832603260000,
+      userId: undefined,
       author: 'Author'
     }
   };
@@ -104,6 +104,12 @@
 
 
 
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1258402180&web_id=1258402180" type="text/javascript"></script>
+  </div>
 
 
 
@@ -184,6 +190,113 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/18/Android-自定义Dialog/" itemprop="url">
+                  Android-自定义Dialog
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-04-18T23:45:34+08:00" content="2016-04-18">
+              2016-04-18
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/18/Android-自定义Dialog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/18/Android-自定义Dialog/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p><img src="/../images/22713.jpg" alt="此处插入界面总体布局图片"></p>
+<h4 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h4><p><strong>在</strong><code>Android</code><strong>中，我们经常会使用到</strong><code>Dialog</code><strong>这个控件，大致可以分为两种：</strong><code>系统Dialog</code><strong>、</strong><code>自定义Dialog</code><strong>。然而我们基本上很少用到</strong><code>系统Dialog</code><strong>，因为不是很美观，缺乏扩展性，可能满足我们的需求，所以我们经常使用的就是自定义</strong><code>Dialog</code><strong>！</strong></p>
+<h4 id="u7528_u6CD5"><a href="#u7528_u6CD5" class="headerlink" title="用法"></a>用法</h4><p><strong>用法其实也非常简单，无非是新建一个类，继承</strong><code>android.app.Dialog</code><strong>类，然后在这个类里面干自己想干的事情！最基本的用法我就过多讲了哈～</strong></p>
+<p><strong>每个Dialog对象中都包含一个Window对象，负责整个Dialog窗口的管理和构造。我们可以通过</strong><code>Window</code><strong>去设置Dialog的宽度、高度、处于屏幕的位置、背景等等一系列属性。</strong></p>
+<p><strong>比如将标题栏隐藏，可以通过设定</strong><code>Window.FEATURE_ NO_TITLE</code><strong>来实现：</strong></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在构造函数中调用*/</span> </span><br><span class="line"><span class="function"><span class="title">requestWindowFeature</span><span class="params">(Window.FEATURE_NO_TITLE)</span></span>；</span><br></pre></td></tr></table></figure>
+<p><code>requestWindowFeature</code><strong>仅接收一个类型参数，如果开发者需要为该样式指定一些附加数据，则需要使用</strong><code>Window.setFeatureInt</code><strong>函数。比如说，如果开发者不是想消隐标题栏，而是自定义窗口标题栏标的样式，则可以利用</strong><code>Window.setFeatureInt</code><strong>来设定自定义标题栏的样式信息:</strong></p>
+ <figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在构造函数中标记一下，表明标题栏将自定义*/</span></span><br><span class="line">getWindow.requestWindowFeature(Window.FEATURE_CUSTOM_TITLE)；</span><br><span class="line"> </span><br><span class="line">setContentView（R.<span class="keyword">layout</span>.content_view）； </span><br><span class="line"></span><br><span class="line"><span class="comment">//设置自定义标题栏的样式</span></span><br><span class="line">getWindow().setFeatureInt（Window.FEATURE_CUSTOM_TITLE,R.<span class="keyword">layout</span>.custom_title);</span><br></pre></td></tr></table></figure>
+<p><strong>上面可能有人已经发现了，设置自定义标题栏样式是在</strong><code>setContentView()</code><strong>后进行的，这里需要注意一下，</strong><code>requestWindowFeature</code><strong>函数需要在</strong><code>setContentView</code><strong>之前调用，而 </strong><code>Window.setFeatureInt</code><strong>函数要在之后调用。原因是，对</strong><code>setContentView</code><strong>的调用将会导致整个界面控件的生成。因此，对控件样式的设定需要在该构造流程之前，而对具体控件对象的变更，则需要在整个界面控件构造完成之后进行。对</strong><code>requestWindowFeature</code><strong>函数和</strong><code>Window.setFeatureInt</code><strong>函数的所有调用， 都需要遵循这个编程模式，否则函数调用可能会失效甚至是出错。</strong></p>
+<h4 id="u4F7F_u7528WindowManager-LayoutParams"><a href="#u4F7F_u7528WindowManager-LayoutParams" class="headerlink" title="使用WindowManager.LayoutParams"></a>使用<code>WindowManager.LayoutParams</code></h4>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/18/Android-自定义Dialog/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -859,7 +972,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
