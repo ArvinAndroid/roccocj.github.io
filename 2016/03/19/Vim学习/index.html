@@ -70,7 +70,7 @@
 1vim filename
 进入编辑模式(输入i时，底部会出现 -- INSERT --的提示)">
 <meta property="og:image" content="http://yoursite.com/../images/12229.jpg">
-<meta property="og:updated_time" content="2016-03-26T13:40:38.000Z">
+<meta property="og:updated_time" content="2016-05-22T14:16:33.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim学习">
 <meta name="twitter:description" content="开始学习Vim的操作，一边学习一边纪录。Vim编辑器是一个模式编辑器。在不同模式下的行为和操作都是截然不同的。两个基本的模式就是标准模式 ( Normal ) 和编辑模式 ( Insert )。在标准模式下，你输入的每一个字符都会被认为是一个命令。在编辑模式下表示输入的字符是真正的文本内容。
@@ -267,55 +267,53 @@
 
       
         <p><img src="/../images/12229.jpg" alt="此处插入界面总体布局图片"></p>
-<h3 id="u5F00_u59CB_u5B66_u4E60Vim_u7684_u64CD_u4F5C_uFF0C_u4E00_u8FB9_u5B66_u4E60_u4E00_u8FB9_u7EAA_u5F55_u3002"><a href="#u5F00_u59CB_u5B66_u4E60Vim_u7684_u64CD_u4F5C_uFF0C_u4E00_u8FB9_u5B66_u4E60_u4E00_u8FB9_u7EAA_u5F55_u3002" class="headerlink" title="开始学习Vim的操作，一边学习一边纪录。"></a><strong>开始学习Vim的操作，一边学习一边纪录。</strong></h3><p><strong>Vim编辑器是一个模式编辑器。在不同模式下的行为和操作都是截然不同的。两个基本的模式就是标准模式 ( Normal ) 和编辑模式 ( Insert )。在标准模式下，你输入的每一个字符都会被认为是一个命令。在编辑模式下表示输入的字符是真正的文本内容。</strong></p>
-<p><strong>打开文件</strong></p>
+<h3 id="u5F00_u59CB_u5B66_u4E60Vim_u7684_u64CD_u4F5C_uFF0C_u4E00_u8FB9_u5B66_u4E60_u4E00_u8FB9_u7EAA_u5F55_u3002"><a href="#u5F00_u59CB_u5B66_u4E60Vim_u7684_u64CD_u4F5C_uFF0C_u4E00_u8FB9_u5B66_u4E60_u4E00_u8FB9_u7EAA_u5F55_u3002" class="headerlink" title="开始学习Vim的操作，一边学习一边纪录。"></a>开始学习Vim的操作，一边学习一边纪录。</h3><p>Vim编辑器是一个模式编辑器。在不同模式下的行为和操作都是截然不同的。两个基本的模式就是标准模式 ( Normal ) 和编辑模式 ( Insert )。在标准模式下，你输入的每一个字符都会被认为是一个命令。在编辑模式下表示输入的字符是真正的文本内容。</p>
+<p>打开文件</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">vim</span> filename</span><br></pre></td></tr></table></figure>
-<p><strong>进入编辑模式(输入</strong><code>i</code><strong>时，底部会出现</strong> <code>-- INSERT --</code><strong>的提示)</strong></p>
+<p>进入编辑模式(输入<code>i</code>时，底部会出现 <code>-- INSERT --</code>的提示)</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">i</span></span><br></pre></td></tr></table></figure>
-<p><strong>上面的</strong><code>i</code><strong>是在当前光标所在位置进行编辑，但如果我想直接新建一行，在新的一行里面编辑呢？可以使用</strong><code>o</code><strong>，作用就相当于普通的</strong><code>Enter</code><strong> :</strong></p>
+<p>上面的<code>i</code>是在当前光标所在位置进行编辑，但如果我想直接新建一行，在新的一行里面编辑呢？可以使用<code>o</code>，作用就相当于普通的<code>Enter</code> :</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o</span><br></pre></td></tr></table></figure>
-<p><strong>在任何情况下，按下</strong><code>esc</code><strong>键时，都会返回到 Normal 模式。( Normal 是默认的工作模式，界面上不会出现任何类似</strong><code>-- INSERT --</code><strong>这样的字符提示)</strong></p>
-<p><strong>移动光标,在Normal模式下，可以通过下面的命令来移动光标：</strong></p>
+<p>在任何情况下，按下<code>esc</code>键时，都会返回到 Normal 模式。( Normal 是默认的工作模式，界面上不会出现任何类似<code>-- INSERT --</code>这样的字符提示)</p>
+<p>移动光标,在Normal模式下，可以通过下面的命令来移动光标：</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">h</span>	左</span><br><span class="line">j	下</span><br><span class="line">k	上</span><br><span class="line"><span class="keyword">l</span>	右</span><br></pre></td></tr></table></figure>
-<p><strong>在很多情况下，这几个命令是提高效率很好的方法，由于电脑的箭头键一般都是在键盘的右下角，如果每次使用箭头键去移动光标，那你不得不把手从正在敲命令或编辑文档的手稍稍的挪一个位置，完成之后再回到原来的姿势，别看这小动作花不了多少时间，那如果做很多很多次呢？所以说使用<code>hjkl</code>还是有很大的好处。</strong><br><a id="more"></a><br><strong>撤销，有些情况下我们可能会操作失误，比如多删除了一些东西，这个时候想撤销之前的操作，那么就用到了下面这个命令，对应普通编辑器中的</strong><code>cart</code><strong>+</strong><code>z</code><strong>：</strong></p>
+<p>在很多情况下，这几个命令是提高效率很好的方法，由于电脑的箭头键一般都是在键盘的右下角，如果每次使用箭头键去移动光标，那你不得不把手从正在敲命令或编辑文档的手稍稍的挪一个位置，完成之后再回到原来的姿势，别看这小动作花不了多少时间，那如果做很多很多次呢？所以说使用<code>hjkl</code>还是有很大的好处。<br><a id="more"></a><br>撤销，有些情况下我们可能会操作失误，比如多删除了一些东西，这个时候想撤销之前的操作，那么就用到了下面这个命令，对应普通编辑器中的<code>cart</code>+<code>z</code>：</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">u</span></span><br></pre></td></tr></table></figure>
-<p><strong>把当前已修改内容另存为一个新的文件 temp_file</strong></p>
+<p>把当前已修改内容另存为一个新的文件 temp_file</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pseudo">:w</span> <span class="tag">temp_file</span></span><br></pre></td></tr></table></figure>
-<p><strong>退出</strong></p>
+<p>退出</p>
 <figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">:q</span></span><br></pre></td></tr></table></figure>
-<p><strong>保存和退出一起使用，注意顺序，现保存再退出</strong></p>
+<p>保存和退出一起使用，注意顺序，现保存再退出</p>
 <figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">:wq</span></span><br></pre></td></tr></table></figure>
-<p><strong>强制退出(当前修改内容不会保存)</strong></p>
+<p>强制退出(当前修改内容不会保存)</p>
 <figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">:q!</span></span><br></pre></td></tr></table></figure>
-<p><strong>除了上面几种命令外，还可以使用</strong><code>ZZ</code><strong>来退出文件，作用与</strong><code>:wq</code><strong>一样，都是保存当前文件并退出(注意是大写的</strong><code>ZZ</code><strong>)</strong></p>
+<p>除了上面几种命令外，还可以使用<code>ZZ</code>来退出文件，作用与<code>:wq</code>一样，都是保存当前文件并退出(注意是大写的<code>ZZ</code>)</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ZZ</span><br></pre></td></tr></table></figure>
-<p><strong>保存文件有时出现</strong> <code>readonly&#39; option is set (add ! to override)</code> <strong>的问题，是因为没有权限导致的，有两种解决方案</strong></p>
+<p>保存文件有时出现 <code>readonly&#39; option is set (add ! to override)</code> 的问题，是因为没有权限导致的，有两种解决方案</p>
 <ul>
-<li><strong>取消只读模式</strong></li>
+<li><p>取消只读模式: <code>:set noreadonly</code></p>
+</li>
+<li><p>使用<code>root</code>权限保存: <code>:w !sudo tee %</code></p>
+</li>
 </ul>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="keyword">set</span> noreadonly</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong> 使用 root 权限保存</strong></li>
-</ul>
-<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="function_or_atom">w</span> <span class="exclamation_mark">!</span><span class="function_or_atom">sudo</span> <span class="function_or_atom">tee</span> <span class="comment">%</span></span><br></pre></td></tr></table></figure>
-<p><strong>熟悉上面一些命令基本上就可以对文件进行最基本的编辑操作了，下面是一些比较常用&amp;实用的命令：</strong></p>
-<p><strong>移动光标到行尾，对应键盘上的</strong><code>End</code><strong>键</strong></p>
+<p>熟悉上面一些命令基本上就可以对文件进行最基本的编辑操作了，下面是一些比较常用&amp;实用的命令：</p>
+<p>移动光标到行尾，对应键盘上的<code>End</code>键</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$</span><br></pre></td></tr></table></figure>
-<p><strong>移动光标到行首（第一个非空白字符上），对应键盘上的</strong><code>Home</code><strong>键</strong></p>
+<p>移动光标到行首（第一个非空白字符上），对应键盘上的<code>Home</code>键</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-<p><strong>保存，输入这个命令就相当于在普通编辑器中按下</strong><code>cart</code><strong>+</strong><code>s</code></p>
+<p>保存，输入这个命令就相当于在普通编辑器中按下<code>cart</code>+<code>s</code></p>
 <figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">:w</span></span><br></pre></td></tr></table></figure>
-<p><strong>删除字符，Normal 模式下，删除字符只需要把光标移到该字符上，然后按下</strong><code>x</code><strong>，ok，你会发现这个字符已经不见了。</strong></p>
+<p>删除字符，Normal 模式下，删除字符只需要把光标移到该字符上，然后按下<code>x</code>，ok，你会发现这个字符已经不见了。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x</span><br></pre></td></tr></table></figure>
-<p><strong>删除光标位置前一个字符(大写的</strong><code>x</code><strong>)</strong></p>
+<p>删除光标位置前一个字符(大写的<code>x</code>)</p>
 <figure class="highlight tp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">X</span></span><br></pre></td></tr></table></figure>
-<p><strong>删除光标所在位置至行尾的内容,大写的</strong><code>d</code></p>
+<p>删除光标所在位置至行尾的内容,大写的<code>d</code></p>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">D</span></span><br></pre></td></tr></table></figure>
-<p><strong>删除一整行</strong></p>
+<p>删除一整行</p>
 <figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="pseudo">dd</span></span><br></pre></td></tr></table></figure>
-<p><strong>删除当前行至文件尾的内容</strong></p>
+<p>删除当前行至文件尾的内容</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dG</span><br></pre></td></tr></table></figure>
-<p><strong>删除当前行至文件头的内容</strong></p>
+<p>删除当前行至文件头的内容</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dgg</span><br></pre></td></tr></table></figure>
 <h4 id="u66F4_u8BE6_u7EC6_u7684Vim_u5B66_u4E60_u8D44_u6599"><a href="#u66F4_u8BE6_u7EC6_u7684Vim_u5B66_u4E60_u8D44_u6599" class="headerlink" title="更详细的Vim学习资料"></a>更详细的Vim学习资料</h4><p><a href="http://download.csdn.net/detail/u014772832/9473405" target="_blank" rel="external">Vim用户手册</a></p>
 

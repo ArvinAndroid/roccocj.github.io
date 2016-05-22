@@ -262,14 +262,14 @@
       
         
           <p><img src="/../images/22713.jpg" alt="此处插入界面总体布局图片"></p>
-<h4 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h4><p><strong>在</strong><code>Android</code><strong>中，我们经常会使用到</strong><code>Dialog</code><strong>这个控件，大致可以分为两种：</strong><code>系统Dialog</code><strong>、</strong><code>自定义Dialog</code><strong>。然而我们基本上很少用到</strong><code>系统Dialog</code><strong>，因为不是很美观，缺乏扩展性，可能无法满足我们的需求，所以我们经常使用的就是自定义</strong><code>Dialog</code><strong>！</strong></p>
-<h4 id="u7528_u6CD5"><a href="#u7528_u6CD5" class="headerlink" title="用法"></a>用法</h4><p><strong>用法其实也非常简单，无非是新建一个类，继承</strong><code>android.app.Dialog</code><strong>类，然后在这个类里面干自己想干的事情！最基本的用法我就过多讲了哈～</strong></p>
-<p><strong>每个Dialog对象中都包含一个Window对象，负责整个Dialog窗口的管理和构造。我们可以通过</strong><code>Window</code><strong>去设置Dialog的宽度、高度、处于屏幕的位置、背景等等一系列属性。</strong></p>
-<p><strong>比如将标题栏隐藏，可以通过设定</strong><code>Window.FEATURE_ NO_TITLE</code><strong>来实现：</strong></p>
+<h4 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h4><p>在<code>Android</code>中，我们经常会使用到<code>Dialog</code>这个控件，大致可以分为两种：<code>系统Dialog</code>、<code>自定义Dialog</code>。然而我们基本上很少用到<code>系统Dialog</code>，因为不是很美观，缺乏扩展性，可能无法满足我们的需求，所以我们经常使用的就是自定义<code>Dialog</code>！</p>
+<h4 id="u7528_u6CD5"><a href="#u7528_u6CD5" class="headerlink" title="用法"></a>用法</h4><p>用法其实也非常简单，无非是新建一个类，继承<code>android.app.Dialog</code>类，然后在这个类里面干自己想干的事情！最基本的用法我就过多讲了哈～</p>
+<p>每个Dialog对象中都包含一个Window对象，负责整个Dialog窗口的管理和构造。我们可以通过<code>Window</code>去设置Dialog的宽度、高度、处于屏幕的位置、背景等等一系列属性。</p>
+<p>比如将标题栏隐藏，可以通过设定<code>Window.FEATURE_ NO_TITLE</code>来实现：</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在构造函数中调用*/</span> </span><br><span class="line"><span class="function"><span class="title">requestWindowFeature</span><span class="params">(Window.FEATURE_NO_TITLE)</span></span>；</span><br></pre></td></tr></table></figure>
-<p><code>requestWindowFeature</code><strong>仅接收一个类型参数，如果需要为该样式指定一些附加数据，则需要使用</strong><code>Window.setFeatureInt</code><strong>函数。比如说，如果不是想消隐标题栏，而是自定义窗口标题栏标的样式，则可以利用</strong><code>Window.setFeatureInt</code><strong>来设定自定义标题栏的样式信息:</strong></p>
- <figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在构造函数中标记一下，表明标题栏将自定义*/</span></span><br><span class="line">getWindow.requestWindowFeature(Window.FEATURE_CUSTOM_TITLE)；</span><br><span class="line"> </span><br><span class="line">setContentView（R.<span class="keyword">layout</span>.content_view）； </span><br><span class="line"></span><br><span class="line"><span class="comment">//设置自定义标题栏的样式</span></span><br><span class="line">getWindow().setFeatureInt（Window.FEATURE_CUSTOM_TITLE,R.<span class="keyword">layout</span>.custom_title);</span><br></pre></td></tr></table></figure>
-<p><strong>上面可能有人已经发现了，设置自定义标题栏样式是在</strong><code>setContentView()</code><strong>后进行的，这里需要注意一下，</strong><code>requestWindowFeature</code><strong>函数需要在</strong><code>setContentView</code><strong>之前调用，而 </strong><code>Window.setFeatureInt</code><strong>函数要在之后调用。原因是，对</strong><code>setContentView</code><strong>的调用将会导致整个界面控件的生成。因此，对控件样式的设定需要在该构造流程之前，而对具体控件对象的变更，则需要在整个界面控件构造完成之后进行。对</strong><code>requestWindowFeature</code><strong>函数和</strong><code>Window.setFeatureInt</code><strong>函数的所有调用， 都需要遵循这个编程模式，否则函数调用可能会失效甚至是出错。</strong></p>
+<p><code>requestWindowFeature</code>仅接收一个类型参数，如果需要为该样式指定一些附加数据，则需要使用<code>Window.setFeatureInt</code>函数。比如说，如果不是想消隐标题栏，而是自定义窗口标题栏标的样式，则可以利用<code>Window.setFeatureInt</code>来设定自定义标题栏的样式信息:</p>
+<figure class="highlight glsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*在构造函数中标记一下，表明标题栏将自定义*/</span></span><br><span class="line">getWindow.requestWindowFeature(Window.FEATURE_CUSTOM_TITLE)；</span><br><span class="line"> </span><br><span class="line">setContentView（R.<span class="keyword">layout</span>.content_view）； </span><br><span class="line"></span><br><span class="line"><span class="comment">//设置自定义标题栏的样式</span></span><br><span class="line">getWindow().setFeatureInt（Window.FEATURE_CUSTOM_TITLE,R.<span class="keyword">layout</span>.custom_title);</span><br></pre></td></tr></table></figure>
+<p>上面可能有人已经发现了，设置自定义标题栏样式是在<code>setContentView()</code>后进行的，这里需要注意一下，<code>requestWindowFeature</code>函数需要在<code>setContentView</code>之前调用，而 <code>Window.setFeatureInt</code>函数要在之后调用。原因是，对<code>setContentView</code>的调用将会导致整个界面控件的生成。因此，对控件样式的设定需要在该构造流程之前，而对具体控件对象的变更，则需要在整个界面控件构造完成之后进行。对<code>requestWindowFeature</code>函数和<code>Window.setFeatureInt</code>函数的所有调用， 都需要遵循这个编程模式，否则函数调用可能会失效甚至是出错。</p>
 <h4 id="u4F7F_u7528WindowManager-LayoutParams"><a href="#u4F7F_u7528WindowManager-LayoutParams" class="headerlink" title="使用WindowManager.LayoutParams"></a>使用<code>WindowManager.LayoutParams</code></h4>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/18/Android-自定义Dialog/#more" rel="contents">
@@ -369,12 +369,12 @@
       
         
           <p><img src="/../images/22254.jpg" alt="此处插入界面总体布局图片"></p>
-<h4 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h4><p><code>Android</code><strong>的数据库实现，依托于当下最流行的开源嵌入式数据库</strong><code>SQLite</code><strong>,一个轻量的关系型数据库。在</strong><code>Android</code><strong>中，每个应用的数据库文件都存储在</strong><code>data/data/package/databases/</code><strong>目录下。</strong></p>
-<p><strong>我们通过</strong><code>android.database.sqlite.SQLiteDatabase</code><strong>来表示一个数据库对象，</strong><code>SQLiteDatabase</code><strong>提供了两种模式，使得我们可以对数据库进行增删改查的基本操作。</strong></p>
-<h4 id="u4F7F_u7528"><a href="#u4F7F_u7528" class="headerlink" title="使用"></a>使用</h4><p><strong>最原始的方式就是通过SQL语句进行操作，调用</strong><code>SQLiteDatabase.execSql</code><strong>或</strong><code>SQLiteDatabase.rawQuery</code><strong>执行操作，比如：</strong></p>
+<h4 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h4><p><code>Android</code>的数据库实现，依托于当下最流行的开源嵌入式数据库<code>SQLite</code>,一个轻量的关系型数据库。在<code>Android</code>中，每个应用的数据库文件都存储在<code>data/data/package/databases/</code>目录下。</p>
+<p>我们通过<code>android.database.sqlite.SQLiteDatabase</code>来表示一个数据库对象，<code>SQLiteDatabase</code>提供了两种模式，使得我们可以对数据库进行增删改查的基本操作。</p>
+<h4 id="u4F7F_u7528"><a href="#u4F7F_u7528" class="headerlink" title="使用"></a>使用</h4><p>最原始的方式就是通过SQL语句进行操作，调用<code>SQLiteDatabase.execSql</code>或<code>SQLiteDatabase.rawQuery</code>执行操作，比如：</p>
 <figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//查询数据</span><br><span class="line"><span class="type">Cursor</span> <span class="literal">result</span> = db.rawQuery(<span class="string">"select * from table"</span>);</span><br><span class="line"></span><br><span class="line">//插入数据</span><br><span class="line">db.execSql(<span class="string">"insert into tables (column1,column2,column3) values (value1,value2,value3)"</span>);</span><br></pre></td></tr></table></figure>
-<p><strong>可以看到，跟普通的SQL语句完全没有任何区别。</strong></p>
-<p><strong>另外</strong><code>Android</code><strong>更加提倡使用结构化的方式操作数据库，这样即使我们不会</strong><code>SQL</code><strong>语句，照样也能对数据库进行增删改查基本操作，那就是使用我们最熟悉的面相对象的方式进行操作，比如：</strong><br>
+<p>可以看到，跟普通的SQL语句完全没有任何区别。</p>
+<p>另外<code>Android</code>更加提倡使用结构化的方式操作数据库，这样即使我们不会<code>SQL</code>语句，照样也能对数据库进行增删改查基本操作，那就是使用我们最熟悉的面相对象的方式进行操作，比如：<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/03/Android数据存储－SQLite/#more" rel="contents">
               Read more &raquo;
@@ -472,16 +472,17 @@
 
       
         
-          <p><img src="/../images/16032.jpg" alt="此处插入界面总体布局图片"><br><strong>全名：</strong><code>Android Debug Bridge</code><strong>，</strong><code>Android</code><strong>下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。</strong></p>
-<p><strong>先通过简单的几个命令来熟悉一下吧</strong>！</p>
-<p><strong>[查看当前连接PC的所有设备]</strong></p>
+          <p><img src="/../images/16032.jpg" alt="此处插入界面总体布局图片"><br>全名：<code>Android Debug Bridge</code>，<code>Android</code>下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。</p>
+<p>先通过简单的几个命令来熟悉一下吧！</p>
+<p>查看当前连接PC的所有设备</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br><span class="line"></span><br><span class="line"><span class="comment">//你会看到设备的序列号和状态</span></span><br><span class="line">e4b25377        device</span><br><span class="line">emulator-<span class="number">5554</span>  device</span><br></pre></td></tr></table></figure>
-<h4 id="apk_u64CD_u4F5C"><a href="#apk_u64CD_u4F5C" class="headerlink" title="apk操作"></a>apk操作</h4><p><strong>[安装</strong><code>apk</code><strong>到手机上,</strong><code>path</code><strong>本地路径，指向一个</strong><code>apk</code><strong>文件]</strong></p>
+<p><strong>apk操作</strong></p>
+<p>安装<code>apk</code>到手机上,<code>path</code>本地路径，指向一个<code>apk</code>文件</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="operator"><span class="keyword">install</span> <span class="keyword">path</span></span></span><br></pre></td></tr></table></figure>
-<p><strong>[从手机上卸载应用,在命令后加上对应包名] (在普通情况下，只能卸载第三方应用，系统自带的基础应用是没有权限卸载的)</strong></p>
+<p>从手机上卸载应用,在命令后加上对应包名 (在普通情况下，只能卸载第三方应用，系统自带的基础应用是没有权限卸载的)</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall com<span class="class">.test</span><span class="class">.app</span></span><br></pre></td></tr></table></figure>
-<p><strong>[显示设备所有已安装的应用包名]</strong></p>
-<p><strong>注：下面这些命令在</strong><code>adb shell</code><strong>之后进行,也可以在每个命令前加上</strong><code>adb</code><strong>，都是一样的效果。</strong><br>
+<p>显示设备所有已安装的应用包名</p>
+<p>注：下面这些命令在<code>adb shell</code>之后进行,也可以在每个命令前加上<code>adb</code>，都是一样的效果。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/25/ADB的一些操作/#more" rel="contents">
               Read more &raquo;
@@ -580,17 +581,17 @@
       
         
           <p><img src="/../images/12229.jpg" alt="此处插入界面总体布局图片"></p>
-<h3 id="u5F00_u59CB_u5B66_u4E60Vim_u7684_u64CD_u4F5C_uFF0C_u4E00_u8FB9_u5B66_u4E60_u4E00_u8FB9_u7EAA_u5F55_u3002"><a href="#u5F00_u59CB_u5B66_u4E60Vim_u7684_u64CD_u4F5C_uFF0C_u4E00_u8FB9_u5B66_u4E60_u4E00_u8FB9_u7EAA_u5F55_u3002" class="headerlink" title="开始学习Vim的操作，一边学习一边纪录。"></a><strong>开始学习Vim的操作，一边学习一边纪录。</strong></h3><p><strong>Vim编辑器是一个模式编辑器。在不同模式下的行为和操作都是截然不同的。两个基本的模式就是标准模式 ( Normal ) 和编辑模式 ( Insert )。在标准模式下，你输入的每一个字符都会被认为是一个命令。在编辑模式下表示输入的字符是真正的文本内容。</strong></p>
-<p><strong>打开文件</strong></p>
+<h3 id="u5F00_u59CB_u5B66_u4E60Vim_u7684_u64CD_u4F5C_uFF0C_u4E00_u8FB9_u5B66_u4E60_u4E00_u8FB9_u7EAA_u5F55_u3002"><a href="#u5F00_u59CB_u5B66_u4E60Vim_u7684_u64CD_u4F5C_uFF0C_u4E00_u8FB9_u5B66_u4E60_u4E00_u8FB9_u7EAA_u5F55_u3002" class="headerlink" title="开始学习Vim的操作，一边学习一边纪录。"></a>开始学习Vim的操作，一边学习一边纪录。</h3><p>Vim编辑器是一个模式编辑器。在不同模式下的行为和操作都是截然不同的。两个基本的模式就是标准模式 ( Normal ) 和编辑模式 ( Insert )。在标准模式下，你输入的每一个字符都会被认为是一个命令。在编辑模式下表示输入的字符是真正的文本内容。</p>
+<p>打开文件</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">vim</span> filename</span><br></pre></td></tr></table></figure>
-<p><strong>进入编辑模式(输入</strong><code>i</code><strong>时，底部会出现</strong> <code>-- INSERT --</code><strong>的提示)</strong></p>
+<p>进入编辑模式(输入<code>i</code>时，底部会出现 <code>-- INSERT --</code>的提示)</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">i</span></span><br></pre></td></tr></table></figure>
-<p><strong>上面的</strong><code>i</code><strong>是在当前光标所在位置进行编辑，但如果我想直接新建一行，在新的一行里面编辑呢？可以使用</strong><code>o</code><strong>，作用就相当于普通的</strong><code>Enter</code><strong> :</strong></p>
+<p>上面的<code>i</code>是在当前光标所在位置进行编辑，但如果我想直接新建一行，在新的一行里面编辑呢？可以使用<code>o</code>，作用就相当于普通的<code>Enter</code> :</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o</span><br></pre></td></tr></table></figure>
-<p><strong>在任何情况下，按下</strong><code>esc</code><strong>键时，都会返回到 Normal 模式。( Normal 是默认的工作模式，界面上不会出现任何类似</strong><code>-- INSERT --</code><strong>这样的字符提示)</strong></p>
-<p><strong>移动光标,在Normal模式下，可以通过下面的命令来移动光标：</strong></p>
+<p>在任何情况下，按下<code>esc</code>键时，都会返回到 Normal 模式。( Normal 是默认的工作模式，界面上不会出现任何类似<code>-- INSERT --</code>这样的字符提示)</p>
+<p>移动光标,在Normal模式下，可以通过下面的命令来移动光标：</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">h</span>	左</span><br><span class="line">j	下</span><br><span class="line">k	上</span><br><span class="line"><span class="keyword">l</span>	右</span><br></pre></td></tr></table></figure>
-<p><strong>在很多情况下，这几个命令是提高效率很好的方法，由于电脑的箭头键一般都是在键盘的右下角，如果每次使用箭头键去移动光标，那你不得不把手从正在敲命令或编辑文档的手稍稍的挪一个位置，完成之后再回到原来的姿势，别看这小动作花不了多少时间，那如果做很多很多次呢？所以说使用<code>hjkl</code>还是有很大的好处。</strong><br>
+<p>在很多情况下，这几个命令是提高效率很好的方法，由于电脑的箭头键一般都是在键盘的右下角，如果每次使用箭头键去移动光标，那你不得不把手从正在敲命令或编辑文档的手稍稍的挪一个位置，完成之后再回到原来的姿势，别看这小动作花不了多少时间，那如果做很多很多次呢？所以说使用<code>hjkl</code>还是有很大的好处。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/19/Vim学习/#more" rel="contents">
               Read more &raquo;
@@ -689,17 +690,17 @@
       
         
           <p><img src="/../images/12766.jpg" alt="此处插入界面总体布局图片"></p>
-<h3 id="u8FDC_u7A0B_u4E3B_u673A_u76F8_u5173_u64CD_u4F5C_uFF1A"><a href="#u8FDC_u7A0B_u4E3B_u673A_u76F8_u5173_u64CD_u4F5C_uFF1A" class="headerlink" title="远程主机相关操作："></a><strong>远程主机相关操作：</strong></h3><p><strong>[在当前目录创建一个新的Git仓库或把当前已存在的仓库初始化]</strong></p>
+<h5 id="u8FDC_u7A0B_u4E3B_u673A_u76F8_u5173_u64CD_u4F5C_uFF1A"><a href="#u8FDC_u7A0B_u4E3B_u673A_u76F8_u5173_u64CD_u4F5C_uFF1A" class="headerlink" title="远程主机相关操作："></a>远程主机相关操作：</h5><p>在当前目录创建一个新的Git仓库或把当前已存在的仓库初始化</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> init</span><br></pre></td></tr></table></figure>
-<p><strong>[把远程库克隆到一个新的目录]</strong></p>
+<p>把远程库克隆到一个新的目录</p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">url</span> name</span><br></pre></td></tr></table></figure>
-<p><strong>[把本地版本库中内容推送到远程仓库，更新远程仓库及相关对象]</strong></p>
+<p>把本地版本库中内容推送到远程仓库，更新远程仓库及相关对象</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">push</span></span><br></pre></td></tr></table></figure>
-<p><strong>[把远程版本库的所有内容更新到本地，包括分支，并与本地分支自动合并]</strong></p>
+<p>把远程版本库的所有内容更新到本地，包括分支，并与本地分支自动合并</p>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br><span class="line"><span class="comment"></span><br><span class="line">//相当于以下两条命令</span></span><br><span class="line">git fetch </span><br><span class="line">git <span class="built_in">merge</span> master</span><br></pre></td></tr></table></figure>
-<p><strong>[获取远程主机的更新，包括分支的内容,可以指定主机和分支]</strong></p>
+<p>获取远程主机的更新，包括分支的内容,可以指定主机和分支</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> fetch origin <span class="keyword">branch </span></span><br><span class="line"></span><br><span class="line">//如果为本地的主机和分支则是 origin/<span class="keyword">branch </span>这种格式</span><br><span class="line"><span class="label">git</span> fetch origin/<span class="keyword">branch</span></span><br></pre></td></tr></table></figure>
-<p><strong>[查看所有主机,加上 -v 后显示主机地址]</strong></p>
+<p>查看所有主机,加上 -v 后显示主机地址</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> remote －v</span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/14/Git基础操作/#more" rel="contents">
@@ -798,12 +799,12 @@
 
       
         
-          <p><img src="/../images/12638.jpg" alt="此处插入界面总体布局图片"><br><strong>先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）</strong></p>
-<h4 id="u7CFB_u7EDF_u5E7F_u64AD"><a href="#u7CFB_u7EDF_u5E7F_u64AD" class="headerlink" title="系统广播"></a><strong>系统广播</strong></h4><p> <strong>由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，只需要按照普通方式来注册receiver就OK。关于Android的一些广播动作API：</strong><a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_TIME_TICK">Standard Broadcast Actions</a></p>
-<h4 id="u81EA_u5B9A_u4E49_u5E7F_u64AD"><a href="#u81EA_u5B9A_u4E49_u5E7F_u64AD" class="headerlink" title="自定义广播"></a><strong>自定义广播</strong></h4><p><strong>光是系统广播的Action肯定是满足不了我们的要求的，所以我们可以通过自定义广播完成部分需求，比如我在一个Service里面完成了某件事情，现在我要通知一个界面做些处理，这个时候就可以用自定义广播，关键点就是</strong><code>IntentFilter</code><strong>的</strong><code>action</code><strong>设置,注意不要跟系统的</strong><code>action</code><strong>重名。</strong></p>
+          <p><img src="/../images/12638.jpg" alt="此处插入界面总体布局图片"><br>先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）</p>
+<h4 id="u7CFB_u7EDF_u5E7F_u64AD"><a href="#u7CFB_u7EDF_u5E7F_u64AD" class="headerlink" title="系统广播"></a>系统广播</h4><p> 由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，只需要按照普通方式来注册receiver就OK。关于Android的一些广播动作API：<a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_TIME_TICK">Standard Broadcast Actions</a></p>
+<h4 id="u81EA_u5B9A_u4E49_u5E7F_u64AD"><a href="#u81EA_u5B9A_u4E49_u5E7F_u64AD" class="headerlink" title="自定义广播"></a>自定义广播</h4><p>光是系统广播的Action肯定是满足不了我们的要求的，所以我们可以通过自定义广播完成部分需求，比如我在一个Service里面完成了某件事情，现在我要通知一个界面做些处理，这个时候就可以用自定义广播，关键点就是<code>IntentFilter</code>的<code>action</code>设置,注意不要跟系统的<code>action</code>重名。</p>
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">IntentFilter <span class="built_in">filter</span> = <span class="keyword">new</span> IntentFilter();</span><br><span class="line"><span class="built_in">filter</span>.addAction(<span class="string">"xx.xx.xxx"</span>);</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">&lt;intent-<span class="built_in">filter</span>&gt;</span><br><span class="line">   &lt;action android:name=<span class="string">"xx.xx.xxx"</span> /&gt;</span><br><span class="line">&lt;/intent-<span class="built_in">filter</span>&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="u65E0_u5E8F_u5E7F_u64AD"><a href="#u65E0_u5E8F_u5E7F_u64AD" class="headerlink" title="无序广播"></a><strong>无序广播</strong></h4><p><strong>顾名思义，大家应该就能知道的。不过说到底，接收还是有一个前后之分，两个app，到底哪个先接收到呢？这个我也不知道怎么说，不过我想，也许是按照app的安装顺序来吧(个人猜测)。</strong></p>
-<h4 id="u6709_u5E8F_u5E7F_u64AD_uFF08OrderedBroadcast_uFF09"><a href="#u6709_u5E8F_u5E7F_u64AD_uFF08OrderedBroadcast_uFF09" class="headerlink" title="有序广播（OrderedBroadcast）"></a><strong>有序广播（OrderedBroadcast）</strong></h4><p><strong>广播接收器收到后,可以调用</strong><code>abortBroadcast()</code><strong>方法终止这条广播的传递，表示我把这个信息截获了，不让后面的人知道。这里涉及到一个优先级(</strong><code>priority</code><strong>)，Android官方规定范围为</strong>-1000到1000<strong>之间。数值越大，则越先收到广播。设置：</strong><br>
+<h4 id="u65E0_u5E8F_u5E7F_u64AD"><a href="#u65E0_u5E8F_u5E7F_u64AD" class="headerlink" title="无序广播"></a>无序广播</h4><p>顾名思义，大家应该就能知道的。不过说到底，接收还是有一个前后之分，两个app，到底哪个先接收到呢？这个我也不知道怎么说，不过我想，也许是按照app的安装顺序来吧(个人猜测)。</p>
+<h4 id="u6709_u5E8F_u5E7F_u64AD_uFF08OrderedBroadcast_uFF09"><a href="#u6709_u5E8F_u5E7F_u64AD_uFF08OrderedBroadcast_uFF09" class="headerlink" title="有序广播（OrderedBroadcast）"></a>有序广播（OrderedBroadcast）</h4><p>广播接收器收到后,可以调用<code>abortBroadcast()</code>方法终止这条广播的传递，表示我把这个信息截获了，不让后面的人知道。这里涉及到一个优先级(<code>priority</code>)，Android官方规定范围为-1000到1000之间。数值越大，则越先收到广播。设置：<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/05/关于Androd-Broadcast的一点小知识/#more" rel="contents">
               Read more &raquo;
@@ -902,11 +903,11 @@
       
         
           
-            <p><strong>你好！欢迎来到我的博客！你可以叫我月火,坐标上海，Android菜鸟一只。</strong></p>
-<p><strong>每当失去方向的时候，看看内心的光亮，就不会惶恐了。能鼓励你的人只有自己！</strong></p>
-<p><strong>现在新的一年里，好好计划，好好改变自己，希望能变的优秀(虽然现在很渣)，那么就从这一步开始吧！</strong></p>
-<p><strong>2016，Fight！！！</strong></p>
-<h2 id="u5728_u5E73_u5766_u7684_u8DEF_u9762_u4E0A_u66F2_u6298_u524D_u884C"><a href="#u5728_u5E73_u5766_u7684_u8DEF_u9762_u4E0A_u66F2_u6298_u524D_u884C" class="headerlink" title="在平坦的路面上曲折前行"></a><strong><center>在平坦的路面上曲折前行</center></strong></h2><p><img src="/../images/20822.jpg" alt="此处插入界面总体布局图片"></p>
+            <p>你好！欢迎来到我的博客！你可以叫我月火,坐标上海，Android菜鸟一只。</p>
+<p>每当失去方向的时候，看看内心的光亮，就不会惶恐了。能鼓励你的人只有自己！</p>
+<p>现在新的一年里，好好计划，好好改变自己，希望能变的优秀(虽然现在很渣)，那么就从这一步开始吧！</p>
+<p>2016，Fight！！！</p>
+<h2 id="u5728_u5E73_u5766_u7684_u8DEF_u9762_u4E0A_u66F2_u6298_u524D_u884C"><a href="#u5728_u5E73_u5766_u7684_u8DEF_u9762_u4E0A_u66F2_u6298_u524D_u884C" class="headerlink" title="在平坦的路面上曲折前行"></a><center>在平坦的路面上曲折前行</center></h2><p><img src="/../images/20822.jpg" alt="此处插入界面总体布局图片"></p>
 
           
         
