@@ -57,25 +57,16 @@
 
 
 
-<meta name="description" content="全名：Android Debug Bridge，Android下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。
-先通过简单的几个命令来熟悉一下吧！
-查看当前连接PC的所有设备
-12345adb devices//你会看到设备的序列号和状态e4b25377        deviceemulator-5554  devic">
+<meta name="description" content="乱写的，不建议点进来看!!!">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ADB的一些操作">
-<meta property="og:url" content="http://yoursite.com/2016/03/25/ADB的一些操作/index.html">
+<meta property="og:title" content="随手写">
+<meta property="og:url" content="http://yoursite.com/2016/05/31/随手写/index.html">
 <meta property="og:site_name" content="生命不息，折腾不止">
-<meta property="og:description" content="全名：Android Debug Bridge，Android下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。
-先通过简单的几个命令来熟悉一下吧！
-查看当前连接PC的所有设备
-12345adb devices//你会看到设备的序列号和状态e4b25377        deviceemulator-5554  devic">
-<meta property="og:updated_time" content="2016-05-30T16:20:42.000Z">
+<meta property="og:description" content="乱写的，不建议点进来看!!!">
+<meta property="og:updated_time" content="2016-05-30T16:39:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ADB的一些操作">
-<meta name="twitter:description" content="全名：Android Debug Bridge，Android下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。
-先通过简单的几个命令来熟悉一下吧！
-查看当前连接PC的所有设备
-12345adb devices//你会看到设备的序列号和状态e4b25377        deviceemulator-5554  devic">
+<meta name="twitter:title" content="随手写">
+<meta name="twitter:description" content="乱写的，不建议点进来看!!!">
 
 
 
@@ -93,7 +84,7 @@
   };
 </script>
 
-  <title> ADB的一些操作 | 生命不息，折腾不止 </title>
+  <title> 随手写 | 生命不息，折腾不止 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -219,7 +210,7 @@
             
             
               
-                ADB的一些操作
+                随手写
               
             
           </h1>
@@ -231,8 +222,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-25T23:56:06+08:00" content="2016-03-25">
-              2016-03-25
+            <time itemprop="dateCreated" datetime="2016-05-31T00:33:14+08:00" content="2016-05-31">
+              2016-05-31
             </time>
           </span>
 
@@ -242,8 +233,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/25/ADB的一些操作/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/25/ADB的一些操作/" itemprop="commentsCount"></span>
+                <a href="/2016/05/31/随手写/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/31/随手写/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -265,34 +256,8 @@
       
 
       
-        <p>全名：<code>Android Debug Bridge</code>，<code>Android</code>下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。</p>
-<p>先通过简单的几个命令来熟悉一下吧！</p>
-<p>查看当前连接PC的所有设备</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br><span class="line"></span><br><span class="line"><span class="comment">//你会看到设备的序列号和状态</span></span><br><span class="line">e4b25377        device</span><br><span class="line">emulator-<span class="number">5554</span>  device</span><br></pre></td></tr></table></figure>
-<p><strong>apk操作</strong></p>
-<p>安装<code>apk</code>到手机上,<code>path</code>本地路径，指向一个<code>apk</code>文件</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="operator"><span class="keyword">install</span> <span class="keyword">path</span></span></span><br></pre></td></tr></table></figure>
-<p>从手机上卸载应用,在命令后加上对应包名 (在普通情况下，只能卸载第三方应用，系统自带的基础应用是没有权限卸载的)</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb uninstall com<span class="class">.test</span><span class="class">.app</span></span><br></pre></td></tr></table></figure>
-<p>显示设备所有已安装的应用包名</p>
-<p>注：下面这些命令在<code>adb shell</code>之后进行,也可以在每个命令前加上<code>adb</code>，都是一样的效果。<br><a id="more"></a><br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm <span class="type">list</span> packages</span><br></pre></td></tr></table></figure></p>
-<p>查看某一个应用的 <code>apk</code> 文件路径,在命令后加上对应包名</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm path com<span class="class">.android</span><span class="class">.email</span></span><br></pre></td></tr></table></figure>
-<p>清除应用信息,也是通过包名,清空<code>data/data/包名</code>下的所有文件信息</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm <span class="attribute">clear</span> com<span class="class">.android</span><span class="class">.email</span></span><br></pre></td></tr></table></figure>
-<p>强制关闭某一个应用程序</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">am force-<span class="operator"><span class="keyword">stop</span> <span class="keyword">package</span>-<span class="keyword">name</span></span></span><br></pre></td></tr></table></figure>
-<p><strong>文件操作</strong></p>
-<p>从手机导出文件到本地，命令很好理解的，把<code>remote</code>路径的文件下载到<code>local</code>路径中</p>
-<p><code>remote</code> 表示手机上的文件路径</p>
-<p><code>local</code> 表示本地路径</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb pull remote <span class="keyword">local</span></span><br></pre></td></tr></table></figure>
-<p>把本地文件导入进手机中,与上一个命令刚好相反</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="keyword">push</span> <span class="keyword">local</span> remote</span><br></pre></td></tr></table></figure>
-<p><strong>[其他]</strong></p>
-<p><code>cd</code>、<code>rm</code>、<code>cp</code>、<code>mv</code>、<code>touch</code>这些基础操作与 <code>linux</code> 下命令基本相同，这里就不一个个举例子了哈。</p>
-<p><strong>更完整的adb命令</strong></p>
-<p><a href="http://adbshell.com/" target="_blank" rel="external">adbshell.com</a></p>
+        <p><strong>乱写的，不建议点进来看!!</strong>!<br><a id="more"></a><br>最近比较忙，天气好热，其实也不热，可能是变胖了，听说胖子都怕热，我不要变胖子，得开始坚持减肥了……。</p>
+<p>好不想睡。睡觉了。</p>
 
       
     </div>
@@ -310,17 +275,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/19/Vim学习/" rel="next" title="Vim学习">
-                <i class="fa fa-chevron-left"></i> Vim学习
+              <a href="/2016/05/31/Android-Resources小解/" rel="next" title="Android-Resources小解">
+                <i class="fa fa-chevron-left"></i> Android-Resources小解
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/03/Android数据存储－SQLite/" rel="prev" title="Android数据存储－SQLite">
-                Android数据存储－SQLite <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -724,9 +685,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jason-chen294';
-      var disqus_identifier = '2016/03/25/ADB的一些操作/';
-      var disqus_title = 'ADB的一些操作';
-      var disqus_url = 'http://yoursite.com/2016/03/25/ADB的一些操作/';
+      var disqus_identifier = '2016/05/31/随手写/';
+      var disqus_title = '随手写';
+      var disqus_url = 'http://yoursite.com/2016/05/31/随手写/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
