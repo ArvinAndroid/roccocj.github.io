@@ -1,0 +1,801 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="应用资源（ApplicationResources）指的是应用中的图片、视频、字符串等非逻辑代码内容，应用资源通常与代码耦合较低，可以独立地进行变更。
+在Android中，应用资源不仅包括图片、视频等数据文件，还包括描述界面样式、字符串信息、颜色等界面相关内容的XML文件。所有的应用资源通过协定的目录和文件结构组织起来，以满足资源适配的需求。
+首先了解Android应用资源的基本构成和特点，明确应">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android-Resources小解">
+<meta property="og:url" content="http://yoursite.com/2016/05/31/Android-Resources小解/index.html">
+<meta property="og:site_name" content="生命不息，折腾不止">
+<meta property="og:description" content="应用资源（ApplicationResources）指的是应用中的图片、视频、字符串等非逻辑代码内容，应用资源通常与代码耦合较低，可以独立地进行变更。
+在Android中，应用资源不仅包括图片、视频等数据文件，还包括描述界面样式、字符串信息、颜色等界面相关内容的XML文件。所有的应用资源通过协定的目录和文件结构组织起来，以满足资源适配的需求。
+首先了解Android应用资源的基本构成和特点，明确应">
+<meta property="og:image" content="http://yoursite.com/../images/stringxml.png">
+<meta property="og:updated_time" content="2016-05-30T16:23:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android-Resources小解">
+<meta name="twitter:description" content="应用资源（ApplicationResources）指的是应用中的图片、视频、字符串等非逻辑代码内容，应用资源通常与代码耦合较低，可以独立地进行变更。
+在Android中，应用资源不仅包括图片、视频等数据文件，还包括描述界面样式、字符串信息、颜色等界面相关内容的XML文件。所有的应用资源通过协定的目录和文件结构组织起来，以满足资源适配的需求。
+首先了解Android应用资源的基本构成和特点，明确应">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: undefined,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> Android-Resources小解 | 生命不息，折腾不止 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?c64c4014612579a2a3e44ae687c71046";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s6.cnzz.com/stat.php?id=1258402180&web_id=1258402180" type="text/javascript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">生命不息，折腾不止</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">每天进步一点点</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android-Resources小解
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-05-31T00:11:12+08:00" content="2016-05-31">
+              2016-05-31
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/31/Android-Resources小解/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/31/Android-Resources小解/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>应用资源（ApplicationResources）指的是应用中的图片、视频、字符串等非逻辑代码内容，应用资源通常与代码耦合较低，可以独立地进行变更。</p>
+<p>在Android中，应用资源不仅包括图片、视频等数据文件，还包括描述界面样式、字符串信息、颜色等界面相关内容的XML文件。所有的应用资源通过协定的目录和文件结构组织起来，以满足资源适配的需求。</p>
+<p>首先了解Android应用资源的基本构成和特点，明确应用资源的设计和架构，才能做到信手拈来，应用自如。</p>
+<p>我这里大概讲下面几个点:</p>
+<ul>
+<li><p>应用资源的构成和特征</p>
+</li>
+<li><p>应用资源的适配</p>
+</li>
+<li><p>应用资源的类型</p>
+</li>
+</ul>
+<h4 id="u5E94_u7528_u8D44_u6E90_u7684_u6784_u6210_u548C_u7279_u5F81"><a href="#u5E94_u7528_u8D44_u6E90_u7684_u6784_u6210_u548C_u7279_u5F81" class="headerlink" title="应用资源的构成和特征"></a>应用资源的构成和特征</h4><p>Android的应用资源可看作是由如下三部分构成的:</p>
+<ul>
+<li>XML资源文件</li>
+<li>数据资源文件</li>
+<li>资源目录（XML资源文件和数据资源文件，可统称为资源文件）</li>
+</ul>
+<p>XML资源文件是应用资源中最重要的组成部分，它由一系列特定格式的XML文件组成，用来存储应用所需的字符串、界面样式和颜色等交互界面相关的信息。XML又是结构化的描述语言，与Java等编程语言相比，它更适合描述结构化的界面信息，更易于构造可视化的界面工具（因为XML比Java更容易解析）。更重要的是，通过XML资源文件，可以将界面相关的信息从代码中独立出来，使界面构造和底层逻辑隔离开来，降低彼此的耦合度，也使得它们能够独立进行变化，从而提升应用的可维护性。</p>
+<a id="more"></a>
+<p>数据资源文件，指的是应用中需要使用的图像文件、音频文件、视频文件及其他格式的数据文件，每个数据资源文件都对应着一个资源项。</p>
+<p>所有的XML资源文件和数据资源文件，都放置在Android定义的资源目录当中。每个资源目录，都会用来存储相同或相近类别的资源文件，比如，资源目录 <code>layout/</code> 中，会放置描述界面信息的XML资源文件。所有的数据资源文件，集中存放在资源目录 <code>drawable</code> 或 <code>raw</code> 中。 <code>drawable</code> 目录中可以放置各种格式的图像文件；而在 <code>raw</code> 目录内，可以放置任意数据格式的文件。</p>
+<p>除了资源目录的命名需要遵循规范，资源文件的命名也有所约定，所有的应用资源文件命名必须是小写的。并且，对于列表型XML资源文件而言，它的命名也必须依照规则，比如:所有的字符串信息，都存放在 <code>values</code> 资源目录中名为 <code>strings.xml</code> 的资源文件中。</p>
+<p>常用的几种资源目录的介绍:</p>
+<ul>
+<li>anim/ :包含动画相关的资源文件</li>
+<li>color/ :包含定义颜色信息的资源文件</li>
+<li>drawable/ :包含应用所需的各类图片数据文件，以及描述其他 Drawable 对象的资源文件</li>
+<li>layout/ :包含定义控件样式的资源文件</li>
+<li>menu/ :包含定义菜单样式的资源文件</li>
+<li>raw/ :包含图像、声频、视频等纯数据文件</li>
+<li>values/ :包含颜色值、字符串、数组等各种常量定义的资源文件</li>
+<li>xml/ :包含搜索配置、应用设置信息等其他内容的资源文件</li>
+</ul>
+<p>参考官方文档:<a href="https://developer.android.com/guide/topics/resources/providing-resources.html" target="_blank" rel="external">Providing Resources</a></p>
+<hr>
+<h4 id="u5E94_u7528_u8D44_u6E90_u7684_u9002_u914D"><a href="#u5E94_u7528_u8D44_u6E90_u7684_u9002_u914D" class="headerlink" title="应用资源的适配"></a>应用资源的适配</h4><p>Android系统支持的移动设备多种多样，不同设备的软硬件环境大相径庭，这就要求运行在Android中的每个应用都能够适应多样的设备环境。</p>
+<p>比如，不同设备的屏幕尺寸和分辨率都有所不同，分辨率高的需要大尺寸的图标，而分辨率低的，仅需要较小尺寸的图标；不同的应用使用了高版本SDK提供的API，这就需要运行在能支持高版本SDK的设备上，而安装了低版本SDK的设备则可能无法运行。 而在Android中，利用应用资源的可适配性，可以有效地解决适配软硬件环境的问题。</p>
+<p>每个资源目录（或者目录中特定的列表型资源文件）都用来存放特定类型的资源信息，同时，还可以为各个资源目录添加对应的适配资源目录，用来存放可替换的资源文件，以适配不同的软硬件环境。适配资源目录的命名格式，是在原有的资源目录的基础上增加适配项，多个适配项通过中划线隔离开来，格式形如:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">drawable-hdpi</span><br><span class="line">drawable-mdpi</span><br><span class="line">drawable-xhdpi</span><br></pre></td></tr></table></figure>
+<p>在实际开发中，最常用的配置项往往与本地化（Localization）或者界面适配相关。以Android原生的联系人应用为例，作为一款随系统发布的原生应用，它k肯定要能够适应各种不同的语言和设备环境。</p>
+<p><strong>联系人应用中对values资源目录进行本地化适配:</strong></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">values</span>		默认语言</span><br><span class="line"><span class="built_in">values</span>-zh-rCN	简体中文<span class="keyword">v</span></span><br><span class="line">alues-zh-rTW	繁体中文</span><br><span class="line"><span class="built_in">values</span>-<span class="keyword">en</span>-rUS	美国英文</span><br><span class="line"><span class="built_in">values</span>-er-rUS	美国西班牙文</span><br><span class="line"><span class="built_in">values</span>-fr	法语</span><br></pre></td></tr></table></figure>
+<p>示例如下:</p>
+<p>先在 <code>values/</code> 目录下的 <code>string.xml</code> 中定义</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">    &lt;<span class="type">string</span> <span class="property">name</span>=<span class="string">"app_name"</span>&gt;测试&lt;/<span class="type">string</span>&gt;</span><br><span class="line">    &lt;<span class="type">string</span> <span class="property">name</span>=<span class="string">"hello"</span>&gt;你好 世界！&lt;/<span class="type">string</span>&gt;</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure>
+<p>再到 <code>values-en-rUS/</code> 目录下的 <code>string.xml</code> 中定义</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">    &lt;<span class="type">string</span> <span class="property">name</span>=<span class="string">"app_name"</span>&gt;test&lt;/<span class="type">string</span>&gt;</span><br><span class="line">    &lt;<span class="type">string</span> <span class="property">name</span>=<span class="string">"hello"</span>&gt;Hello world!&lt;/<span class="type">string</span>&gt;</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure>
+<p>如下图所示:</p>
+<p><img src="/../images/stringxml.png" alt="此处插入界面总体布局图片"></p>
+<p>我在应用中引用了上面两个字符串资源，此时可以实验一下把手机的系统语言换成美国英语 <code>English(United States)</code>，就可以看到效果了。</p>
+<p><strong>同时，联系人应用使用适配项对不同屏幕尺寸的界面进行定制:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">layout			默认界面样式</span><br><span class="line">layout-sw580dp		最小宽度大于<span class="number">580</span>dp的设备界面样式（可能是<span class="number">5</span>寸平板）</span><br><span class="line">layout-sw680dp-w1000dp	最小宽度大于<span class="number">680</span>dp，当前宽度大于<span class="number">1000</span>dp（当前宽度与屏幕转向相关）的设备样式（可能是大尺寸平板）</span><br><span class="line">layout-land		横屏时的界面样式…</span><br></pre></td></tr></table></figure>
+<p><strong>此外，联系人应用也为不同分辨率的设备定制了不同的图片信息:</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">drawable		默认图像</span><br><span class="line">drawable-mdpi		较小尺寸屏幕使用的图像</span><br><span class="line">drawable-xhdpi</span><br><span class="line">drawable-sw580dp-hdpi	最小宽度大于<span class="number">580</span>dp的大屏幕使用的图像</span><br><span class="line">drawable-xhdpi		高清屏幕使用的图像</span><br></pre></td></tr></table></figure>
+<p>参考文档:<a href="http://developer.android.com/guide/topics/resources/providing-resources.html#table2" target="_blank" rel="external">Configuration qualifier names</a></p>
+<h4 id="u5E94_u7528_u8D44_u6E90_u7684_u7C7B_u578B"><a href="#u5E94_u7528_u8D44_u6E90_u7684_u7C7B_u578B" class="headerlink" title="应用资源的类型"></a>应用资源的类型</h4><p><strong>字符串和常量</strong></p>
+<p>在应用开发中，经常需要定义常量，以提升这些只读信息的可读性和复用性。在Android中，如果一个常量与界面上的元素相关，通常不在代码中声明，而是在资源文件中定义。将界面相关的常量信息通过资源文件来描述，有两个好处。</p>
+<ul>
+<li><p>可以被其他资源引用。比如，如果期望在控件中使用同一背景色，那么将该颜色信息在资源文件中定义，进而被其他资源文件使用。</p>
+</li>
+<li><p>可以根据软硬件环境进行适配。比如，如果应用需要支持多种语言版本，那么要将不同语言版本的字符串信息在资源文件中进行定义，通过资源的可适配性进行动态配置。</p>
+</li>
+</ul>
+<p>在Android中，字符串、颜色、数组等常量信息的定义都放在 <code>values</code> 目录下（样式信息也是一种常量）。在资源文件中，所有常量定义都放在 <code>＜resources＞</code> 元素下，每类常量都有与之对应的XML元素，如下所示:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">＜?xml <span class="property">version</span>=<span class="number">1.0</span> encoding=utf-<span class="number">8</span>?＞</span><br><span class="line">＜resources＞</span><br><span class="line"></span><br><span class="line">	＜！<span class="comment">--维度常量，定义一个长度，单位可以是dp、sp，等--＞</span></span><br><span class="line">	＜dimen <span class="property">name</span>=<span class="string">"sample_dimen"</span>＞<span class="number">100</span>dp＜/dimen＞</span><br><span class="line"></span><br><span class="line">	＜！<span class="comment">--字符串常量--＞</span></span><br><span class="line">	＜<span class="type">string</span> <span class="property">name</span>=<span class="string">"sample_string"</span>＞字符常量＜/<span class="type">string</span>＞</span><br><span class="line"></span><br><span class="line">	＜！<span class="comment">--颜色常量，格式可以是#AARRGGBB、#ARGB、#RGB，等--＞</span></span><br><span class="line">	＜color <span class="property">name</span>=<span class="string">"sample_color"</span>＞<span class="comment">#ffffff＜/color＞</span></span><br><span class="line"></span><br><span class="line">	＜！<span class="comment">--数组常量，可以定义字符、整型等多种数组--＞</span></span><br><span class="line">	＜<span class="type">integer</span>-array <span class="property">name</span>=<span class="string">"sample_array"</span>＞</span><br><span class="line">		＜<span class="property">item</span>＞<span class="number">1</span>＜/<span class="property">item</span>＞</span><br><span class="line">		＜<span class="property">item</span>＞<span class="number">2</span>＜/<span class="property">item</span>＞</span><br><span class="line">	＜/<span class="type">integer</span>-array＞</span><br><span class="line"></span><br><span class="line">＜/resources＞</span><br></pre></td></tr></table></figure>
+<p>开发者可以将资源常量信息放在 <code>values</code> 目录下的任一XML资源文件中。但为了更好地管理和查看这些字符和常量定义，在实际开发中，通常将不同类型的常量信息放在不同的资源文件中。比如，字符资源通常放在 <code>strings.xml</code> 中，颜色定义放在 <code>colors.xml</code> 内，数组的定义则放在 <code>array.xml</code> 中，在上面我只是为了示例方便才定义在一个 <code>&lt;resources＞</code> 元素下的。</p>
+<p>参考官方文档:</p>
+<p>字符串和字符串数组的定义:<a href="https://developer.android.com/guide/topics/resources/string-resource.html" target="_blank" rel="external">String Resources</a></p>
+<p>更多其他类型的常量定义:<a href="https://developer.android.com/guide/topics/resources/more-resources.html" target="_blank" rel="external">More Resources Types</a></p>
+<p><strong>图像、图形和动画</strong></p>
+<p>在Android中，图形和图像相关的资源文件，都放在drawable目录下；drawable目录除了可以为png、jpg、gif等格式的数据文件提供图像信息，还可以用xml文件来描述一个图像或图形文件。</p>
+<p>在实际开发中，有时候控件背景需要是能够自适应屏幕尺寸的渐变色，这样的背景无法通过简单的图像文件来提供（在Android中，也可以使用draw9格式的文件来满足此类需求，这里先暂时跳过），在Android中，可以通过xml图形资源文件进行绘制，比如:</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">＜?<span class="built_in">xml</span> version=<span class="string">"1.0"</span> encoding=<span class="string">"utf-8"</span>?＞</span><br><span class="line">	＜<span class="subst">!</span>--白到黑的一个渐变--＞</span><br><span class="line">	＜shape xmlns:android=<span class="string">"http://schemas.android.com/apk/res/android</span><br><span class="line">		android:shape="</span>rectangle<span class="string">"＞</span><br><span class="line">	＜gradient android:startColor="</span><span class="variable">#ffffff</span><span class="string">" android:endColor="</span><span class="variable">#000000</span><span class="string">"/＞</span><br><span class="line">＜/shape＞</span></span><br></pre></td></tr></table></figure>
+<p>动画与图像的状况有些相近。动画资源文件放在 <code>anim/</code> 目录下，全部通过值类型的XML资源文件进行描述。每个动画资源文件都可以加载成为 <code>android.view.animation.Animation</code> 对象，通过结构化的XML元素，来描述动画的构造和帧信息。</p>
+<p>Drawable 相关资源信息参考：<a href="https://developer.android.com/guide/topics/resources/drawable-resource.html" target="_blank" rel="external">Drawable Resources</a></p>
+<p>Animation 相关信息资源参考：<a href="https://developer.android.com/guide/topics/resources/animation-resource.html" target="_blank" rel="external">Animation Resources</a></p>
+<p>这次简单介绍了关于 Android 应用资源相关的信息，是比较基础的知识，目的为了更好的掌握这块的知识，也能够一定程度的提高开发效率。也算是一次复习。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/18/Android-自定义Dialog/" rel="next" title="Android-自定义Dialog">
+                <i class="fa fa-chevron-left"></i> Android-自定义Dialog
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head.jpg"
+               alt="Rocco Chenn" />
+          <p class="site-author-name" itemprop="name">Rocco Chenn</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/roccocj" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5159306283" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#u5E94_u7528_u8D44_u6E90_u7684_u6784_u6210_u548C_u7279_u5F81"><span class="nav-number">1.</span> <span class="nav-text">应用资源的构成和特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5E94_u7528_u8D44_u6E90_u7684_u9002_u914D"><span class="nav-number">2.</span> <span class="nav-text">应用资源的适配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u5E94_u7528_u8D44_u6E90_u7684_u7C7B_u578B"><span class="nav-number">3.</span> <span class="nav-text">应用资源的类型</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rocco Chenn</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'jason-chen294';
+      var disqus_identifier = '2016/05/31/Android-Resources小解/';
+      var disqus_title = 'Android-Resources小解';
+      var disqus_url = 'http://yoursite.com/2016/05/31/Android-Resources小解/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

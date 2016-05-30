@@ -65,8 +65,7 @@
 <meta property="og:site_name" content="生命不息，折腾不止">
 <meta property="og:description" content="介绍Android的数据库实现，依托于当下最流行的开源嵌入式数据库SQLite,一个轻量的关系型数据库。在Android中，每个应用的数据库文件都存储在data/data/package/databases/目录下。
 我们通过android.database.sqlite.SQLiteDatabase来表示一个数据库对象，SQLiteDatabase提供了两种模式，使得我们可以对数据库进行增删改查">
-<meta property="og:image" content="http://yoursite.com/../images/22254.jpg">
-<meta property="og:updated_time" content="2016-05-22T14:09:07.000Z">
+<meta property="og:updated_time" content="2016-05-30T16:21:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android数据存储－SQLite">
 <meta name="twitter:description" content="介绍Android的数据库实现，依托于当下最流行的开源嵌入式数据库SQLite,一个轻量的关系型数据库。在Android中，每个应用的数据库文件都存储在data/data/package/databases/目录下。
@@ -260,8 +259,7 @@
       
 
       
-        <p><img src="/../images/22254.jpg" alt="此处插入界面总体布局图片"></p>
-<h4 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h4><p><code>Android</code>的数据库实现，依托于当下最流行的开源嵌入式数据库<code>SQLite</code>,一个轻量的关系型数据库。在<code>Android</code>中，每个应用的数据库文件都存储在<code>data/data/package/databases/</code>目录下。</p>
+        <h4 id="u4ECB_u7ECD"><a href="#u4ECB_u7ECD" class="headerlink" title="介绍"></a>介绍</h4><p><code>Android</code>的数据库实现，依托于当下最流行的开源嵌入式数据库<code>SQLite</code>,一个轻量的关系型数据库。在<code>Android</code>中，每个应用的数据库文件都存储在<code>data/data/package/databases/</code>目录下。</p>
 <p>我们通过<code>android.database.sqlite.SQLiteDatabase</code>来表示一个数据库对象，<code>SQLiteDatabase</code>提供了两种模式，使得我们可以对数据库进行增删改查的基本操作。</p>
 <h4 id="u4F7F_u7528"><a href="#u4F7F_u7528" class="headerlink" title="使用"></a>使用</h4><p>最原始的方式就是通过SQL语句进行操作，调用<code>SQLiteDatabase.execSql</code>或<code>SQLiteDatabase.rawQuery</code>执行操作，比如：</p>
 <figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//查询数据</span><br><span class="line"><span class="type">Cursor</span> <span class="literal">result</span> = db.rawQuery(<span class="string">"select * from table"</span>);</span><br><span class="line"></span><br><span class="line">//插入数据</span><br><span class="line">db.execSql(<span class="string">"insert into tables (column1,column2,column3) values (value1,value2,value3)"</span>);</span><br></pre></td></tr></table></figure>
@@ -391,7 +389,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

@@ -65,8 +65,7 @@
 <meta property="og:site_name" content="生命不息，折腾不止">
 <meta property="og:description" content="先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）
 系统广播 由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，">
-<meta property="og:image" content="http://yoursite.com/../images/12638.jpg">
-<meta property="og:updated_time" content="2016-05-22T14:08:52.000Z">
+<meta property="og:updated_time" content="2016-05-30T16:21:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Androd Broadcast小解">
 <meta name="twitter:description" content="先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）
@@ -260,7 +259,7 @@
       
 
       
-        <p><img src="/../images/12638.jpg" alt="此处插入界面总体布局图片"><br>先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）</p>
+        <p>先说一下Broadcast的类型，最常见和最熟悉的无非是系统广播、自定义广播、有序广播、无序广播，这几种类型了吧。但还有另外两种可能有些童鞋不清楚，那就是：粘性广播(StickyBroadcast)和本地广播(LocalBroadcast)，今天我简单介绍一下这几种广播特点。（其实也就知道这么点…）</p>
 <h4 id="u7CFB_u7EDF_u5E7F_u64AD"><a href="#u7CFB_u7EDF_u5E7F_u64AD" class="headerlink" title="系统广播"></a>系统广播</h4><p> 由Android系统发出的广播，比如收到短信，来电，开关机之类的，如果想要监听这些动作，只需要按照普通方式来注册receiver就OK。关于Android的一些广播动作API：<a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_TIME_TICK" target="_blank" rel="external">Standard Broadcast Actions</a></p>
 <h4 id="u81EA_u5B9A_u4E49_u5E7F_u64AD"><a href="#u81EA_u5B9A_u4E49_u5E7F_u64AD" class="headerlink" title="自定义广播"></a>自定义广播</h4><p>光是系统广播的Action肯定是满足不了我们的要求的，所以我们可以通过自定义广播完成部分需求，比如我在一个Service里面完成了某件事情，现在我要通知一个界面做些处理，这个时候就可以用自定义广播，关键点就是<code>IntentFilter</code>的<code>action</code>设置,注意不要跟系统的<code>action</code>重名。</p>
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">IntentFilter <span class="built_in">filter</span> = <span class="keyword">new</span> IntentFilter();</span><br><span class="line"><span class="built_in">filter</span>.addAction(<span class="string">"xx.xx.xxx"</span>);</span><br><span class="line"><span class="keyword">or</span></span><br><span class="line">&lt;intent-<span class="built_in">filter</span>&gt;</span><br><span class="line">   &lt;action android:name=<span class="string">"xx.xx.xxx"</span> /&gt;</span><br><span class="line">&lt;/intent-<span class="built_in">filter</span>&gt;</span><br></pre></td></tr></table></figure>
@@ -385,7 +384,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
