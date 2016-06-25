@@ -57,28 +57,35 @@
 
 
 
-<meta name="description" content="想要获得成功其实真的很简单，就两个字：“坚持”。这个其实每个人都知道，但往往能做到的人少之又少。
-我们知道太多太多的道理、名言警句、励志鸡汤……但基本上看过后，顶多是三分钟热度，而后总是不了了之。
-俗话说的好：有压力才有动力、人都是逼出来的。
-每当快堕落的时候，去喝些鸡汤，看看成功典例，刺激刺激自己: 你怎么能这么废？
-赶紧学习，加油!">
+<meta name="description" content="比较简单的 合并的两种方式：merge 和 rebase 、合并时发生冲突的一些处理。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="随手写">
-<meta property="og:url" content="http://yoursite.com/2016/05/31/随手写/index.html">
+<meta property="og:title" content="Git 分支合并&冲突处理">
+<meta property="og:url" content="http://yoursite.com/2016/06/25/Git-分支合并-冲突处理/index.html">
 <meta property="og:site_name" content="生命不息，折腾不止">
-<meta property="og:description" content="想要获得成功其实真的很简单，就两个字：“坚持”。这个其实每个人都知道，但往往能做到的人少之又少。
-我们知道太多太多的道理、名言警句、励志鸡汤……但基本上看过后，顶多是三分钟热度，而后总是不了了之。
-俗话说的好：有压力才有动力、人都是逼出来的。
-每当快堕落的时候，去喝些鸡汤，看看成功典例，刺激刺激自己: 你怎么能这么废？
-赶紧学习，加油!">
-<meta property="og:updated_time" content="2016-06-15T14:26:12.000Z">
+<meta property="og:description" content="比较简单的 合并的两种方式：merge 和 rebase 、合并时发生冲突的一些处理。">
+<meta property="og:image" content="http://yoursite.com/../images/master-first.png">
+<meta property="og:image" content="http://yoursite.com/../images/fix1.png">
+<meta property="og:image" content="http://yoursite.com/../images/master-2.png">
+<meta property="og:image" content="http://yoursite.com/../images/merge-hint.png">
+<meta property="og:image" content="http://yoursite.com/../images/merge走势图.png">
+<meta property="og:image" content="http://yoursite.com/../images/rebase走势图.png">
+<meta property="og:image" content="http://yoursite.com/../images/test1-file-content.png">
+<meta property="og:image" content="http://yoursite.com/../images/fix2-modify-test1.png">
+<meta property="og:image" content="http://yoursite.com/../images/master-modify-test1.png">
+<meta property="og:image" content="http://yoursite.com/../images/merge-fix2.png">
+<meta property="og:image" content="http://yoursite.com/../images/conflict.png">
+<meta property="og:image" content="http://yoursite.com/../images/conflict-content.png">
+<meta property="og:image" content="http://yoursite.com/../images/conflict-done.png">
+<meta property="og:image" content="http://yoursite.com/../images/merge-fix2-done.png">
+<meta property="og:image" content="http://yoursite.com/../images/merge-fix2走势图.png">
+<meta property="og:image" content="http://yoursite.com/../images/rebase-fix2.png">
+<meta property="og:image" content="http://yoursite.com/../images/rebase-fix2-st.png">
+<meta property="og:image" content="http://yoursite.com/../images/rebase-fix2-done.png">
+<meta property="og:image" content="http://yoursite.com/../images/rebase-fix2走势图.png">
+<meta property="og:updated_time" content="2016-06-25T08:50:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="随手写">
-<meta name="twitter:description" content="想要获得成功其实真的很简单，就两个字：“坚持”。这个其实每个人都知道，但往往能做到的人少之又少。
-我们知道太多太多的道理、名言警句、励志鸡汤……但基本上看过后，顶多是三分钟热度，而后总是不了了之。
-俗话说的好：有压力才有动力、人都是逼出来的。
-每当快堕落的时候，去喝些鸡汤，看看成功典例，刺激刺激自己: 你怎么能这么废？
-赶紧学习，加油!">
+<meta name="twitter:title" content="Git 分支合并&冲突处理">
+<meta name="twitter:description" content="比较简单的 合并的两种方式：merge 和 rebase 、合并时发生冲突的一些处理。">
 
 
 
@@ -96,7 +103,7 @@
   };
 </script>
 
-  <title> 随手写 | 生命不息，折腾不止 </title>
+  <title> Git 分支合并&冲突处理 | 生命不息，折腾不止 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -222,7 +229,7 @@
             
             
               
-                随手写
+                Git 分支合并&冲突处理
               
             
           </h1>
@@ -234,8 +241,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-05-31T00:33:14+08:00" content="2016-05-31">
-              2016-05-31
+            <time itemprop="dateCreated" datetime="2016-06-25T16:40:35+08:00" content="2016-06-25">
+              2016-06-25
             </time>
           </span>
 
@@ -245,8 +252,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/31/随手写/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/31/随手写/" itemprop="commentsCount"></span>
+                <a href="/2016/06/25/Git-分支合并-冲突处理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/25/Git-分支合并-冲突处理/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -268,11 +275,88 @@
       
 
       
-        <p>想要获得成功其实真的很简单，就两个字：“坚持”。这个其实每个人都知道，但往往能做到的人少之又少。</p>
-<p>我们知道太多太多的道理、名言警句、励志鸡汤……但基本上看过后，顶多是三分钟热度，而后总是不了了之。</p>
-<p>俗话说的好：有压力才有动力、人都是逼出来的。</p>
-<p>每当快堕落的时候，去喝些鸡汤，看看成功典例，刺激刺激自己: 你怎么能这么废？</p>
-<p>赶紧学习，加油!</p>
+        <p>比较简单的 合并的两种方式：merge 和 rebase 、合并时发生冲突的一些处理。<br><a id="more"></a><br>首先我在 <code>master</code> 新建一个文件,然后做了一次 <code>commit</code> .</p>
+<p>如图：</p>
+<p><img src="/../images/master-first.png" alt="此处插入界面总体布局图片"></p>
+<p>然后现在新建一个分支,比如需要修复一个 <code>bug</code>。</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">branch </span>fix1</span><br></pre></td></tr></table></figure>
+<p>并且在 <code>fix1</code> 分支上修改同一个文件,做了一次 <code>commit</code>(不修改之前的内容,在原有的基础上新增内容):</p>
+<p><img src="/../images/fix1.png" alt="此处插入界面总体布局图片"></p>
+<p>现在这个 <code>bug</code> 修复了，但是还没有合并到 <code>master</code> 中，这个时候我切回 <code>master</code> 继续工作，并又做了一次 <code>commit</code>。</p>
+<p><img src="/../images/master-2.png" alt="此处插入界面总体布局图片"></p>
+<p>ok ， 假如这个 <code>bug</code> 修复测试后，确认修复了，需要合并到 <code>master</code> 上来。现在你有两种方法： <code>merge</code> &amp; <code>rebase</code> .</p>
+<p><strong>我们先看看 <code>merge</code> 的效果：</strong></p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="keyword">master</span> <span class="title">//先要处在 master</span> 分支上</span><br><span class="line"></span><br><span class="line">git merge fix1</span><br></pre></td></tr></table></figure>
+<p>执行上面的命令会出现下面这个界面:</p>
+<p><img src="/../images/merge-hint.png" alt="此处插入界面总体布局图片"></p>
+<p>这个可以理解为是让你编辑此时合并的备注信息。现在这个是用 <code>vi</code> 编辑的，因为 <code>Git</code> 默认的编辑器是 <code>vi</code> ，这个是可以改的。</p>
+<p>现在看到走势图如下：</p>
+<p><img src="/../images/merge走势图.png" alt="此处插入界面总体布局图片"></p>
+<p><strong>用 rebase 进行合并:</strong></p>
+<p>假设现在的版本在 merge 之前,通过下面这个命令回退:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard <span class="function"><span class="title">version</span><span class="params">(版本号,commit 的哈希值)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>然后进行合并：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> rebase fix1</span><br></pre></td></tr></table></figure>
+<p>直接合并完成，走势图如下：</p>
+<p><img src="/../images/rebase走势图.png" alt="此处插入界面总体布局图片"></p>
+<p>合并完成之后，刚刚的 fix1 分支不需要了，就可以删掉它了：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">branch </span>-d fix1</span><br></pre></td></tr></table></figure>
+<p>至此，一次完整的合并就此结束。</p>
+<hr>
+<p>上面的分支合并操作并没有任何冲突的地方，但有时候却不会如此顺利，比如在不同的分支中都修改同一个文件的同一部分。 Git 就无法直接把两个分支的代码合并到一起，这个时候就得需要你自己来处理冲突，然后再提交。</p>
+<p>现在我有一个 test1 文件，他的内容如下：</p>
+<p><img src="/../images/test1-file-content.png" alt="此处插入界面总体布局图片"></p>
+<p>我新开一个分支 fix2 ，修改了一下 test1 文件，并且 commit，如下：</p>
+<p><img src="/../images/fix2-modify-test1.png" alt="此处插入界面总体布局图片"></p>
+<p>然后我切回 master ,在同样的地方做出如下修改：</p>
+<p><img src="/../images/master-modify-test1.png" alt="此处插入界面总体布局图片"></p>
+<p>可以看到，我在两个分支上面都对 第二行 这一个地方做出了不同的修改，那么现在我们来合并看一下是什么样子。</p>
+<p>同样，先用 <code>merge</code>:</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">merge</span> fix2</span><br></pre></td></tr></table></figure>
+<p>此时 <code>Git</code> 做了合并的操作，如下：</p>
+<p><img src="/../images/merge-fix2.png" alt="此处插入界面总体布局图片"></p>
+<p>但是没有提交，因为发现了冲突，得需要你手动处理完冲突再进行提交。我们来看看发生了什么冲突：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">status</span></span><br></pre></td></tr></table></figure>
+<p>看到如下：</p>
+<p><img src="/../images/conflict.png" alt="此处插入界面总体布局图片"></p>
+<p>看到是 test1 文件发生冲突，我们打开文件看一下，具体是哪些内容？</p>
+<p><img src="/../images/conflict-content.png" alt="此处插入界面总体布局图片"></p>
+<p>可以看到 <code>=======</code> 隔开的上半部分，是 <code>HEAD</code>（即 <code>master</code> 分支，在运行 <code>merge</code> 命令时所切换到的分支）中的内容，下半部分是在 <code>fix2</code> 分支中的内容。解决冲突的办法无非是二者选其一或者由你重新编辑生成新的内容。比如可以改成这样：</p>
+<p><img src="/../images/conflict-done.png" alt="此处插入界面总体布局图片"></p>
+<p>如果你确认冲突已解决，那么就可以用 commit 来完成这次合并提交了。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> commit</span><br></pre></td></tr></table></figure>
+<p>提交的信息如下：</p>
+<p><img src="/../images/merge-fix2-done.png" alt="此处插入界面总体布局图片"></p>
+<p>对应的走势图如下：</p>
+<p><img src="/../images/merge-fix2走势图.png" alt="此处插入界面总体布局图片"></p>
+<hr>
+<p>上面我是使用 <code>merge</code> 进行合并和解决冲突的，下面我用 <code>rebase</code> 看一看效果是如何的：</p>
+<p>我先退回到未合并之前的版本：</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard <span class="number">5e496e2</span>abc<span class="number">7b8b84248</span>861b27aefe<span class="number">9f1350789</span>b7</span><br></pre></td></tr></table></figure>
+<p>也就是执行 <code>git merge fix2</code> 的那一步，现在我是用 <code>rebase</code>:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> rebase fix2</span><br></pre></td></tr></table></figure>
+<p>出现以下提示：</p>
+<p><img src="/../images/rebase-fix2.png" alt="此处插入界面总体布局图片"></p>
+<p>同样查看一下此时的状态：</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">status</span></span><br></pre></td></tr></table></figure>
+<p><img src="/../images/rebase-fix2-st.png" alt="此处插入界面总体布局图片"></p>
+<p>现在就按照之前的办法解决这个冲突,修改完冲突之后，把文件添加到暂存区：</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">add </span>.</span><br></pre></td></tr></table></figure>
+<p>继续合并：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase --<span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+<p><img src="/../images/rebase-fix2-done.png" alt="此处插入界面总体布局图片"></p>
+<p>现在就完成此次的合并了，走势图如下：</p>
+<p><img src="/../images/rebase-fix2走势图.png" alt="此处插入界面总体布局图片"></p>
+<hr>
+<p>上面就是合并的两种方式，通过走势图可以发现，两种方式的走势图并不相同。</p>
+<p>使用 merge 合并后，分叉标记依然还在,可以理解为把两个分支的合并后，出现一个新的快照，就是合并后的版本。</p>
+<p>用 <code>rebase</code> 合并后，看起来像是在同一条线上修改的。<br>其实 <code>rebase</code> 的操作相当于把 另一个分支 (<code>fix2</code>) 中修改的代码在当前分支(<code>master</code>) 中重打了一遍，就好像快进了一个版本一样。</p>
+<p>用 <code>rebase</code> 有一定的风险，比如你把原来分支上的提交发布到公共仓库，然后再其他人下载后并在其基础上工作。而你现在使用 rebase 抛弃之前的提交，重新修改内容，再发布到公共仓库时，其他人就不得不重新合并它们的工作，这样当你再从公共仓库拉取代码时，提交历史就会变得一团糟！</p>
+<p>所以记住一条：</p>
+<p><strong>一旦分支中的提交对象发布到公共仓库，就千万不要对该分支进行 <code>rebase</code> 操作！</strong></p>
+<hr>
+<p>这里只是很简单的两个合并操作，有些地方描述的也不是很准确，自己也是在学习过程中。 ^_^</p>
+<p>关于 Git 详细的教程，推荐下面这个网址：</p>
+<p><a href="https://git-scm.com/book/zh/v2" target="_blank" rel="external">https://git-scm.com/book</a></p>
 
       
     </div>
@@ -290,17 +374,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/31/Android-Resources小解/" rel="next" title="Android-Resources小解">
-                <i class="fa fa-chevron-left"></i> Android-Resources小解
+              <a href="/2016/05/31/随手写/" rel="next" title="随手写">
+                <i class="fa fa-chevron-left"></i> 随手写
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/25/Git-分支合并-冲突处理/" rel="prev" title="Git 分支合并&冲突处理">
-                Git 分支合并&冲突处理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -704,9 +784,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'jason-chen294';
-      var disqus_identifier = '2016/05/31/随手写/';
-      var disqus_title = '随手写';
-      var disqus_url = 'http://yoursite.com/2016/05/31/随手写/';
+      var disqus_identifier = '2016/06/25/Git-分支合并-冲突处理/';
+      var disqus_title = 'Git 分支合并&冲突处理';
+      var disqus_url = 'http://yoursite.com/2016/06/25/Git-分支合并-冲突处理/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
