@@ -69,7 +69,7 @@
 先通过简单的几个命令来熟悉一下吧！
 查看当前连接PC的所有设备
 12345adb devices//你会看到设备的序列号和状态e4b25377        deviceemulator-5554  devic">
-<meta property="og:updated_time" content="2016-05-30T16:20:42.000Z">
+<meta property="og:updated_time" content="2016-06-25T09:02:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ADB的一些操作">
 <meta name="twitter:description" content="全名：Android Debug Bridge，Android下的强大的一个工具。我们通过adb，使手机与PC建立连接，从而可以在开发工具中调试程序、可以管理手机、对手机进行一系列的操作。
@@ -269,6 +269,7 @@
 <p>先通过简单的几个命令来熟悉一下吧！</p>
 <p>查看当前连接PC的所有设备</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">adb devices</span><br><span class="line"></span><br><span class="line"><span class="comment">//你会看到设备的序列号和状态</span></span><br><span class="line">e4b25377        device</span><br><span class="line">emulator-<span class="number">5554</span>  device</span><br></pre></td></tr></table></figure>
+<p>当电脑连接多台设备时，制定连接某一台<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb -s <span class="function"><span class="title">e4b25377</span><span class="params">(就是根据上面的序列号进行指定)</span></span></span><br></pre></td></tr></table></figure></p>
 <p><strong>apk操作</strong></p>
 <p>安装<code>apk</code>到手机上,<code>path</code>本地路径，指向一个<code>apk</code>文件</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adb <span class="operator"><span class="keyword">install</span> <span class="keyword">path</span></span></span><br></pre></td></tr></table></figure>
@@ -394,8 +395,8 @@
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head.jpg"
-               alt="Rocco Chenn" />
-          <p class="site-author-name" itemprop="name">Rocco Chenn</p>
+               alt="Rocco Chen" />
+          <p class="site-author-name" itemprop="name">Rocco Chen</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
@@ -482,7 +483,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Rocco Chenn</span>
+  <span class="author" itemprop="copyrightHolder">Rocco Chen</span>
 </div>
 
 <div class="powered-by">
